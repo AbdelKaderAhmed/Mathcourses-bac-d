@@ -1,0 +1,2821 @@
+{
+  "schema_version": "2.0",
+  "platform": "Mouine",
+  "platform_ar": "معين",
+  "country": "Mauritanie",
+  "language": "fr",
+  "generated_at": "2026-09-23T19:37:15.095637+00:00",
+  "content": {
+    "chapter": {
+      "chapter_id": "ch_nombres_complexes",
+      "title_fr": "Nombres Complexes",
+      "subtitle_fr": "Forme algébrique, représentation, conjugué, module, argument, formes trigonométrique et exponentielle",
+      "level": "Terminale",
+      "country": "Mauritanie",
+      "language": "fr",
+      "estimated_time_minutes": 180,
+      "learning_goals_fr": [
+        "Écrire un nombre complexe sous forme algébrique et identifier sa partie réelle et sa partie imaginaire.",
+        "Représenter un nombre complexe par un point dans le plan complexe et utiliser la notion d'affixe.",
+        "Calculer le conjugué et le module d'un nombre complexe.",
+        "Déterminer un argument et écrire un nombre complexe sous forme trigonométrique puis exponentielle.",
+        "Résoudre une équation du second degré dans C lorsque le discriminant est négatif."
+      ],
+      "concepts_order": [
+        "concept_forme_algebrique",
+        "concept_re_im",
+        "concept_plan_complexe",
+        "concept_conjugue",
+        "concept_module",
+        "concept_argument",
+        "concept_forme_trigonometrique",
+        "concept_forme_exponentielle"
+      ],
+      "internal": {
+        "source_id": "prompt_example_nombres_complexes",
+        "source_pages": "non_fourni",
+        "provenance": "contenu d'exemple issu du prompt professionnel Mouine",
+        "validation_status": "demo",
+        "review_status": "needs_human_review_when_source_provided",
+        "generation_metadata": {
+          "generated_at": "2026-09-23T19:37:15.095503+00:00",
+          "generator": "GLM-Mouine-v2.0",
+          "note_fr": "Démonstration produite en l'absence du fichier source. Remplacer par le contenu source dès qu'il sera fourni."
+        }
+      }
+    },
+    "concepts": [
+      {
+        "concept_id": "concept_forme_algebrique",
+        "title_fr": "Forme algébrique d'un nombre complexe",
+        "short_title_fr": "Forme algébrique",
+        "prerequisites": [],
+        "difficulty_default": 1,
+        "visual_required": false,
+        "explanation": {
+          "title_fr": "Qu'est-ce qu'un nombre complexe ?",
+          "simple_explanation_fr": "Un nombre complexe s'écrit sous la forme z = x + iy, avec x et y deux nombres réels et i tel que i² = -1. Cette écriture s'appelle la forme algébrique du nombre complexe.",
+          "formula_latex": "z = x + iy \\quad \\text{avec} \\quad x \\in \\mathbb{R},\\ y \\in \\mathbb{R},\\ i^2 = -1",
+          "example": {
+            "statement_fr": "Le nombre z = 3 + 4i est un nombre complexe.",
+            "steps_fr": [
+              "On identifie la forme x + iy.",
+              "Ici, x = 3 et y = 4.",
+              "Donc z = 3 + 4i est bien écrit sous forme algébrique."
+            ],
+            "result_fr": "z = 3 + 4i est un nombre complexe de forme algébrique."
+          },
+          "important_point_fr": "i n'est pas une variable. C'est un nombre vérifiant i² = -1. On ne peut donc pas simplifier 4i en 4.",
+          "common_mistake_fr": "Écrire z = 3 + 4 et oublier le i. Le symbole i doit toujours accompagner la partie imaginaire."
+        },
+        "worked_example": {
+          "problem_fr": "Parmi les nombres suivants, lesquels sont écrits sous forme algébrique ? z₁ = 5 - 2i, z₂ = 7, z₃ = i, z₄ = 3 + i².",
+          "steps": [
+            {
+              "step": 1,
+              "question_fr": "z₁ = 5 - 2i est-il de la forme x + iy ?",
+              "answer_fr": "Oui.",
+              "explanation_fr": "On a x = 5 et y = -2. La forme algébrique est respectée."
+            },
+            {
+              "step": 2,
+              "question_fr": "z₂ = 7 est-il un nombre complexe ?",
+              "answer_fr": "Oui, c'est un nombre réel, donc un cas particulier de nombre complexe avec y = 0.",
+              "explanation_fr": "On peut écrire z₂ = 7 + 0i."
+            },
+            {
+              "step": 3,
+              "question_fr": "z₃ = i est-il un nombre complexe ?",
+              "answer_fr": "Oui, c'est un imaginaire pur avec x = 0 et y = 1.",
+              "explanation_fr": "On peut écrire z₃ = 0 + 1i."
+            },
+            {
+              "step": 4,
+              "question_fr": "z₄ = 3 + i² est-il sous forme algébrique ?",
+              "answer_fr": "Non, pas encore.",
+              "explanation_fr": "Comme i² = -1, on a z₄ = 3 - 1 = 2. Il faut simplifier avant d'obtenir la forme algébrique."
+            }
+          ],
+          "final_answer_fr": "z₁, z₂ et z₃ sont déjà sous forme algébrique. z₄ doit être simplifié : z₄ = 2."
+        },
+        "interactive_activity": {
+          "type": "fill_blank",
+          "prompt_fr": "Complète : un nombre complexe s'écrit z = __ + i__ .",
+          "expected_answer": [
+            "x",
+            "y"
+          ],
+          "instruction_fr": "Glisse les bonnes lettres dans les cases vides."
+        },
+        "common_mistakes": [
+          {
+            "misconception_id": "misconception_i_variable",
+            "wrong_answer_fr": "Traiter i comme une inconnue à résoudre.",
+            "correct_answer_fr": "i est un nombre fixe tel que i² = -1.",
+            "explanation_fr": "i n'est pas une variable. C'est un nombre nouveau qui permet d'étendre les réels."
+          },
+          {
+            "misconception_id": "misconception_oubli_i",
+            "wrong_answer_fr": "z = 3 + 4 (sans le i).",
+            "correct_answer_fr": "z = 3 + 4i.",
+            "explanation_fr": "Le coefficient imaginaire doit toujours être multiplié par i."
+          }
+        ],
+        "mastery": {
+          "concept_id": "concept_forme_algebrique",
+          "mastery_threshold": 0.8,
+          "minimum_attempts": 3,
+          "review_if_failed": true,
+          "remediation_path": [
+            "revoir l'explication simple",
+            "refaire l'exemple guidé",
+            "refaire un exercice facile"
+          ]
+        },
+        "internal": {
+          "source_pages": "non_fourni",
+          "provenance": "prompt_example",
+          "validation_status": "math_ok",
+          "review_status": "validated_for_demo"
+        }
+      },
+      {
+        "concept_id": "concept_re_im",
+        "title_fr": "Partie réelle et partie imaginaire",
+        "short_title_fr": "Re(z) et Im(z)",
+        "prerequisites": [
+          "concept_forme_algebrique"
+        ],
+        "difficulty_default": 1,
+        "visual_required": false,
+        "explanation": {
+          "title_fr": "Reconnaître Re(z) et Im(z)",
+          "simple_explanation_fr": "Dans z = x + iy, le nombre x s'appelle la partie réelle et se note Re(z). Le nombre y s'appelle la partie imaginaire et se note Im(z). Attention : la partie imaginaire est le nombre y, sans le i.",
+          "formula_latex": "\\forall z = x + iy \\in \\mathbb{C} : \\quad Re(z) = x, \\quad Im(z) = y",
+          "example": {
+            "statement_fr": "Soit z = 3 + 4i. Donner Re(z) et Im(z).",
+            "steps_fr": [
+              "On identifie la forme z = x + iy.",
+              "Ici, x = 3 et y = 4.",
+              "Donc Re(z) = 3 et Im(z) = 4."
+            ],
+            "result_fr": "Re(z) = 3 et Im(z) = 4."
+          },
+          "important_point_fr": "Re(z) et Im(z) sont toujours des nombres réels. Im(z) ne contient pas le symbole i.",
+          "common_mistake_fr": "Écrire Im(z) = 4i. C'est faux : la partie imaginaire est 4, pas 4i."
+        },
+        "worked_example": {
+          "problem_fr": "Soit z = -2 + 5i. Trouve Re(z) et Im(z).",
+          "steps": [
+            {
+              "step": 1,
+              "question_fr": "Identifie d'abord le nombre qui accompagne i. Que vaut-il ?",
+              "answer_fr": "5.",
+              "explanation_fr": "Dans z = -2 + 5i, le coefficient de i est 5. C'est la partie imaginaire."
+            },
+            {
+              "step": 2,
+              "question_fr": "Et le nombre qui n'est pas multiplié par i ?",
+              "answer_fr": "-2.",
+              "explanation_fr": "Le terme -2 est la partie réelle. Attention au signe : c'est -2, pas 2."
+            },
+            {
+              "step": 3,
+              "question_fr": "Conclus.",
+              "answer_fr": "Re(z) = -2 et Im(z) = 5.",
+              "explanation_fr": "On lit directement les deux parties à partir de la forme algébrique."
+            }
+          ],
+          "final_answer_fr": "Re(z) = -2 et Im(z) = 5."
+        },
+        "interactive_activity": {
+          "type": "math_input",
+          "prompt_fr": "Soit z = -2 + 5i. Quelle est la partie réelle de z ?",
+          "expected_answer": "-2",
+          "accepted_answers": [
+            "-2"
+          ],
+          "hint_level_1_fr": "Rappelle-toi la forme z = x + iy.",
+          "hint_level_2_fr": "Dans z = x + iy, la partie réelle est le nombre x, sans le i.",
+          "hint_level_3_fr": "Dans z = -2 + 5i, le nombre sans i est -2. Donc Re(z) = -2."
+        },
+        "common_mistakes": [
+          {
+            "misconception_id": "misconception_imaginary_part",
+            "wrong_answer_fr": "Im(z) = 4i pour z = 3 + 4i.",
+            "correct_answer_fr": "Im(z) = 4.",
+            "explanation_fr": "La partie imaginaire est le coefficient de i, pas le terme 4i entier."
+          },
+          {
+            "misconception_id": "misconception_signe_re",
+            "wrong_answer_fr": "Pour z = -2 + 5i, Re(z) = 2.",
+            "correct_answer_fr": "Re(z) = -2.",
+            "explanation_fr": "Il faut conserver le signe. Le terme réel est -2, pas 2."
+          }
+        ],
+        "mastery": {
+          "concept_id": "concept_re_im",
+          "mastery_threshold": 0.8,
+          "minimum_attempts": 3,
+          "review_if_failed": true,
+          "remediation_path": [
+            "revoir la définition de Re(z) et Im(z)",
+            "refaire un exemple avec un signe négatif",
+            "exercice facile de reconnaissance"
+          ]
+        },
+        "internal": {
+          "source_pages": "non_fourni",
+          "provenance": "prompt_example",
+          "validation_status": "math_ok",
+          "review_status": "validated_for_demo"
+        }
+      },
+      {
+        "concept_id": "concept_plan_complexe",
+        "title_fr": "Représentation dans le plan complexe — affixe",
+        "short_title_fr": "Plan complexe et affixe",
+        "prerequisites": [
+          "concept_re_im"
+        ],
+        "difficulty_default": 2,
+        "visual_required": true,
+        "explanation": {
+          "title_fr": "Représenter un nombre complexe par un point",
+          "simple_explanation_fr": "On peut représenter un nombre complexe z = x + iy par un point M dans un plan. L'axe horizontal porte les parties réelles, l'axe vertical porte les parties imaginaires. Le point M a pour coordonnées (x ; y). On dit que z est l'affixe du point M.",
+          "formula_latex": "z = x + iy \\iff M(x,\\ y) \\quad \\text{avec} \\quad \\text{affixe}(M) = z",
+          "example": {
+            "statement_fr": "Soit z = 3 + 4i. Place le point M d'affixe z dans le plan complexe.",
+            "steps_fr": [
+              "Re(z) = 3 : on avance de 3 sur l'axe horizontal.",
+              "Im(z) = 4 : on monte de 4 sur l'axe vertical.",
+              "Le point M a pour coordonnées (3 ; 4)."
+            ],
+            "result_fr": "Le point M(3 ; 4) représente z = 3 + 4i."
+          },
+          "important_point_fr": "À chaque nombre complexe correspond un unique point du plan, et inversement.",
+          "common_mistake_fr": "Inverser les axes : on met x sur l'axe vertical. C'est faux : x est toujours sur l'axe horizontal."
+        },
+        "worked_example": {
+          "problem_fr": "Soit z = -2 + 5i. Donne les coordonnées du point M d'affixe z.",
+          "steps": [
+            {
+              "step": 1,
+              "question_fr": "Quelle est la partie réelle de z ?",
+              "answer_fr": "-2.",
+              "explanation_fr": "C'est l'abscisse du point M."
+            },
+            {
+              "step": 2,
+              "question_fr": "Quelle est la partie imaginaire de z ?",
+              "answer_fr": "5.",
+              "explanation_fr": "C'est l'ordonnée du point M."
+            },
+            {
+              "step": 3,
+              "question_fr": "Quelles sont les coordonnées de M ?",
+              "answer_fr": "M(-2 ; 5).",
+              "explanation_fr": "On lit directement Re(z) et Im(z) comme coordonnées."
+            }
+          ],
+          "final_answer_fr": "Le point M d'affixe z = -2 + 5i a pour coordonnées M(-2 ; 5)."
+        },
+        "interactive_activity": {
+          "type": "complex_plane",
+          "prompt_fr": "Déplace le point M pour qu'il représente le nombre complexe z = -2 + 5i.",
+          "expected_coordinates": {
+            "x": -2,
+            "y": 5
+          },
+          "tolerance": 0.2,
+          "visual_id": "visual_point_M_affixe",
+          "instruction_fr": "Glisse le point M jusqu'aux bonnes coordonnées."
+        },
+        "common_mistakes": [
+          {
+            "misconception_id": "misconception_axes_inverses",
+            "wrong_answer_fr": "Pour z = 3 + 4i, placer M(4 ; 3).",
+            "correct_answer_fr": "M(3 ; 4).",
+            "explanation_fr": "Le premier nombre (Re(z)) est l'abscisse, le second (Im(z)) est l'ordonnée."
+          },
+          {
+            "misconception_id": "misconception_affixe_vs_coordonnees",
+            "wrong_answer_fr": "Dire que l'affixe est un point.",
+            "correct_answer_fr": "L'affixe est un nombre complexe. Le point a des coordonnées.",
+            "explanation_fr": "L'affixe est le nombre z ; les coordonnées du point sont (Re(z) ; Im(z))."
+          }
+        ],
+        "mastery": {
+          "concept_id": "concept_plan_complexe",
+          "mastery_threshold": 0.8,
+          "minimum_attempts": 3,
+          "review_if_failed": true,
+          "remediation_path": [
+            "revoir la définition d'affixe",
+            "manipuler le plan complexe interactif",
+            "exercice facile de placement"
+          ]
+        },
+        "internal": {
+          "source_pages": "non_fourni",
+          "provenance": "prompt_example",
+          "validation_status": "math_ok",
+          "review_status": "validated_for_demo"
+        }
+      },
+      {
+        "concept_id": "concept_conjugue",
+        "title_fr": "Conjugué d'un nombre complexe",
+        "short_title_fr": "Conjugué z̄",
+        "prerequisites": [
+          "concept_re_im"
+        ],
+        "difficulty_default": 2,
+        "visual_required": true,
+        "explanation": {
+          "title_fr": "Qu'est-ce que le conjugué ?",
+          "simple_explanation_fr": "Le conjugué d'un nombre complexe z = x + iy est le nombre z̄ = x - iy. On obtient le conjugué en changeant le signe de la partie imaginaire. Géométriquement, le point associé à z̄ est le symétrique du point associé à z par rapport à l'axe des réels.",
+          "formula_latex": "z = x + iy \\iff \\bar{z} = x - iy",
+          "example": {
+            "statement_fr": "Soit z = 3 + 4i. Calcule z̄.",
+            "steps_fr": [
+              "On garde la partie réelle : x = 3.",
+              "On change le signe de la partie imaginaire : 4 devient -4.",
+              "Donc z̄ = 3 - 4i."
+            ],
+            "result_fr": "z̄ = 3 - 4i."
+          },
+          "important_point_fr": "Le conjugué ne change que le signe de la partie imaginaire. La partie réelle reste identique.",
+          "common_mistake_fr": "Changer aussi le signe de la partie réelle. C'est faux : seul le signe de Im(z) change."
+        },
+        "worked_example": {
+          "problem_fr": "Soit z = -2 + 5i. Calcule z̄.",
+          "steps": [
+            {
+              "step": 1,
+              "question_fr": "Quelle est la partie réelle de z ?",
+              "answer_fr": "-2.",
+              "explanation_fr": "Elle ne change pas dans le conjugué."
+            },
+            {
+              "step": 2,
+              "question_fr": "Quelle est la partie imaginaire de z ?",
+              "answer_fr": "5.",
+              "explanation_fr": "C'est le coefficient de i."
+            },
+            {
+              "step": 3,
+              "question_fr": "Quel est le signe à changer ?",
+              "answer_fr": "On change 5 en -5.",
+              "explanation_fr": "Le conjugué change uniquement le signe de la partie imaginaire."
+            },
+            {
+              "step": 4,
+              "question_fr": "Écris z̄.",
+              "answer_fr": "z̄ = -2 - 5i.",
+              "explanation_fr": "On assemble : partie réelle inchangée, partie imaginaire opposée."
+            }
+          ],
+          "final_answer_fr": "z̄ = -2 - 5i."
+        },
+        "interactive_activity": {
+          "type": "complex_plane",
+          "prompt_fr": "Soit z = -2 + 5i représenté par M. Déplace le point M' pour qu'il représente z̄.",
+          "expected_coordinates": {
+            "x": -2,
+            "y": -5
+          },
+          "tolerance": 0.2,
+          "visual_id": "visual_conjugue_symetrie",
+          "instruction_fr": "Place le symétrique de M par rapport à l'axe horizontal."
+        },
+        "common_mistakes": [
+          {
+            "misconception_id": "misconception_conjugue_signe_re",
+            "wrong_answer_fr": "Pour z = 3 + 4i, écrire z̄ = -3 - 4i.",
+            "correct_answer_fr": "z̄ = 3 - 4i.",
+            "explanation_fr": "Seul le signe de la partie imaginaire change. La partie réelle reste 3."
+          },
+          {
+            "misconception_id": "misconception_conjugue_egal_z",
+            "wrong_answer_fr": "Dire que z̄ = z.",
+            "correct_answer_fr": "z̄ = z uniquement si z est réel (Im(z) = 0).",
+            "explanation_fr": "En général, z̄ est différent de z. Il y a égalité seulement pour les nombres réels."
+          }
+        ],
+        "mastery": {
+          "concept_id": "concept_conjugue",
+          "mastery_threshold": 0.8,
+          "minimum_attempts": 3,
+          "review_if_failed": true,
+          "remediation_path": [
+            "revoir la règle du conjugué",
+            "refaire un exemple avec un signe négatif",
+            "exercice facile"
+          ]
+        },
+        "internal": {
+          "source_pages": "non_fourni",
+          "provenance": "prompt_example",
+          "validation_status": "math_ok",
+          "review_status": "validated_for_demo"
+        }
+      },
+      {
+        "concept_id": "concept_module",
+        "title_fr": "Module d'un nombre complexe",
+        "short_title_fr": "Module |z|",
+        "prerequisites": [
+          "concept_re_im",
+          "concept_plan_complexe"
+        ],
+        "difficulty_default": 2,
+        "visual_required": true,
+        "explanation": {
+          "title_fr": "Qu'est-ce que le module ?",
+          "simple_explanation_fr": "Le module d'un nombre complexe z = x + iy est la distance entre l'origine O et le point M d'affixe z. Il se calcule avec le théorème de Pythagore : |z| = √(x² + y²). Le module est toujours un nombre réel positif ou nul.",
+          "formula_latex": "|z| = \\sqrt{x^2 + y^2} = \\sqrt{Re(z)^2 + Im(z)^2}",
+          "example": {
+            "statement_fr": "Soit z = 3 + 4i. Calcule |z|.",
+            "steps_fr": [
+              "On identifie x = 3 et y = 4.",
+              "On calcule x² + y² = 9 + 16 = 25.",
+              "On prend la racine : |z| = √25 = 5."
+            ],
+            "result_fr": "|z| = 5."
+          },
+          "important_point_fr": "Le module est une distance, donc |z| ≥ 0 toujours. Le module de 0 est 0.",
+          "common_mistake_fr": "Oublier la racine carrée et écrire |z| = x² + y². C'est faux : il faut prendre √(x² + y²)."
+        },
+        "worked_example": {
+          "problem_fr": "Soit z = -2 + 5i. Calcule |z|.",
+          "steps": [
+            {
+              "step": 1,
+              "question_fr": "Identifie x et y.",
+              "answer_fr": "x = -2 et y = 5.",
+              "explanation_fr": "Ce sont Re(z) et Im(z)."
+            },
+            {
+              "step": 2,
+              "question_fr": "Calcule x² + y².",
+              "answer_fr": "x² + y² = 4 + 25 = 29.",
+              "explanation_fr": "On élève au carré : (-2)² = 4 et 5² = 25, puis on additionne."
+            },
+            {
+              "step": 3,
+              "question_fr": "Déduis |z|.",
+              "answer_fr": "|z| = √29.",
+              "explanation_fr": "On prend la racine carrée du résultat."
+            }
+          ],
+          "final_answer_fr": "|z| = √29 ≈ 5,39."
+        },
+        "interactive_activity": {
+          "type": "complex_plane",
+          "prompt_fr": "Soit z = 3 + 4i représenté par M. Identifie visuellement le segment qui représente |z|.",
+          "expected_action": "select_segment_OM",
+          "visual_id": "visual_module_OM",
+          "instruction_fr": "Clique sur le segment OM. Sa longueur est |z|."
+        },
+        "common_mistakes": [
+          {
+            "misconception_id": "misconception_module_sans_racine",
+            "wrong_answer_fr": "Pour z = 3 + 4i, |z| = 25.",
+            "correct_answer_fr": "|z| = 5.",
+            "explanation_fr": "25 est x² + y². Le module est la racine carrée : √25 = 5."
+          },
+          {
+            "misconception_id": "misconception_module_negatif",
+            "wrong_answer_fr": "Pour z = -2 + 5i, |z| = -√29.",
+            "correct_answer_fr": "|z| = √29.",
+            "explanation_fr": "Un module est une distance : il est toujours positif ou nul."
+          }
+        ],
+        "mastery": {
+          "concept_id": "concept_module",
+          "mastery_threshold": 0.8,
+          "minimum_attempts": 3,
+          "review_if_failed": true,
+          "remediation_path": [
+            "revoir la formule du module",
+            "refaire un calcul avec Pythagore",
+            "exercice facile"
+          ]
+        },
+        "internal": {
+          "source_pages": "non_fourni",
+          "provenance": "prompt_example",
+          "validation_status": "math_ok",
+          "review_status": "validated_for_demo"
+        }
+      },
+      {
+        "concept_id": "concept_argument",
+        "title_fr": "Argument d'un nombre complexe",
+        "short_title_fr": "Argument arg(z)",
+        "prerequisites": [
+          "concept_plan_complexe",
+          "concept_module"
+        ],
+        "difficulty_default": 3,
+        "visual_required": true,
+        "explanation": {
+          "title_fr": "Qu'est-ce qu'un argument ?",
+          "simple_explanation_fr": "Un argument du nombre complexe z non nul est l'angle orienté θ entre l'axe des réels (positif) et la demi-droite [OM), où M est le point d'affixe z. On le note arg(z). Il est défini à 2π près : on peut ajouter ou retirer n'importe quel multiple de 2π.",
+          "formula_latex": "\\arg(z) \\equiv \\theta \\pmod{2\\pi}, \\quad \\tan \\theta = \\dfrac{Im(z)}{Re(z)}",
+          "example": {
+            "statement_fr": "Soit z = 1 + i. Donne un argument de z.",
+            "steps_fr": [
+              "On a x = 1 et y = 1, donc M(1 ; 1).",
+              "Le triangle est isocèle rectangle, donc l'angle vaut π/4.",
+              "On peut écrire arg(z) = π/4 (à 2π près)."
+            ],
+            "result_fr": "arg(z) = π/4 + 2kπ, k ∈ Z."
+          },
+          "important_point_fr": "L'argument n'est défini que pour z ≠ 0. Il dépend du quadrant où se trouve M.",
+          "common_mistake_fr": "Utiliser arctan(y/x) sans vérifier le quadrant. arctan donne un angle entre -π/2 et π/2 ; il faut ajuster selon le signe de x et y."
+        },
+        "worked_example": {
+          "problem_fr": "Soit z = -1 + i. Détermine arg(z).",
+          "steps": [
+            {
+              "step": 1,
+              "question_fr": "Dans quel quadrant se trouve le point M d'affixe z ?",
+              "answer_fr": "Dans le quadrant II (x < 0, y > 0).",
+              "explanation_fr": "Re(z) = -1 < 0 et Im(z) = 1 > 0."
+            },
+            {
+              "step": 2,
+              "question_fr": "Calcule tan(θ) = y/x.",
+              "answer_fr": "tan(θ) = 1 / (-1) = -1.",
+              "explanation_fr": "Le rapport vaut -1, mais attention au quadrant."
+            },
+            {
+              "step": 3,
+              "question_fr": "arctan(-1) = -π/4. Comment ajuster pour le quadrant II ?",
+              "answer_fr": "On ajoute π : θ = -π/4 + π = 3π/4.",
+              "explanation_fr": "Dans le quadrant II, l'argument est entre π/2 et π."
+            },
+            {
+              "step": 4,
+              "question_fr": "Conclus.",
+              "answer_fr": "arg(z) = 3π/4 + 2kπ, k ∈ Z.",
+              "explanation_fr": "On peut ajouter n'importe quel multiple de 2π."
+            }
+          ],
+          "final_answer_fr": "arg(z) = 3π/4 + 2kπ, k ∈ Z."
+        },
+        "interactive_activity": {
+          "type": "complex_plane",
+          "prompt_fr": "Soit z = 1 + i représenté par M. Identifie visuellement l'angle qui représente arg(z).",
+          "expected_action": "select_angle_theta",
+          "visual_id": "visual_argument_theta",
+          "instruction_fr": "Clique sur l'angle θ formé entre l'axe horizontal et la demi-droite OM."
+        },
+        "common_mistakes": [
+          {
+            "misconception_id": "misconception_argument_quadrant",
+            "wrong_answer_fr": "Pour z = -1 + i, arg(z) = -π/4.",
+            "correct_answer_fr": "arg(z) = 3π/4.",
+            "explanation_fr": "arctan(y/x) ignore le quadrant. Comme M est dans le quadrant II, il faut ajouter π."
+          },
+          {
+            "misconception_id": "misconception_argument_zero",
+            "wrong_answer_fr": "arg(0) = 0.",
+            "correct_answer_fr": "arg(0) n'est pas défini.",
+            "explanation_fr": "L'argument n'existe que pour z ≠ 0, car il n'y a pas d'angle pour le point O."
+          }
+        ],
+        "mastery": {
+          "concept_id": "concept_argument",
+          "mastery_threshold": 0.8,
+          "minimum_attempts": 4,
+          "review_if_failed": true,
+          "remediation_path": [
+            "revoir la définition d'argument et le cercle trigonométrique",
+            "refaire un exemple par quadrant",
+            "exercice facile de lecture d'angle"
+          ]
+        },
+        "internal": {
+          "source_pages": "non_fourni",
+          "provenance": "prompt_example",
+          "validation_status": "math_ok",
+          "review_status": "validated_for_demo"
+        }
+      },
+      {
+        "concept_id": "concept_forme_trigonometrique",
+        "title_fr": "Forme trigonométrique d'un nombre complexe",
+        "short_title_fr": "Forme trigonométrique",
+        "prerequisites": [
+          "concept_module",
+          "concept_argument"
+        ],
+        "difficulty_default": 3,
+        "visual_required": true,
+        "explanation": {
+          "title_fr": "Écrire z sous forme trigonométrique",
+          "simple_explanation_fr": "Tout nombre complexe non nul z peut s'écrire sous la forme z = r(cos θ + i sin θ), où r = |z| est le module et θ = arg(z) est un argument. Cette écriture s'appelle la forme trigonométrique de z.",
+          "formula_latex": "z = r\\left(\\cos\\theta + i\\sin\\theta\\right), \\quad r = |z| > 0, \\quad \\theta = \\arg(z)",
+          "example": {
+            "statement_fr": "Mets z = 1 + i sous forme trigonométrique.",
+            "steps_fr": [
+              "Module : |z| = √(1² + 1²) = √2.",
+              "Argument : arg(z) = π/4.",
+              "On écrit : z = √2 (cos(π/4) + i sin(π/4))."
+            ],
+            "result_fr": "z = √2 (cos(π/4) + i sin(π/4))."
+          },
+          "important_point_fr": "La forme trigonométrique nécessite un module r > 0. Le signe éventuel doit être absorbé dans l'angle θ.",
+          "common_mistake_fr": "Écrire z = r(cos θ - i sin θ) en oubliant le signe. La forme trigonométrique utilise toujours +i sin θ."
+        },
+        "worked_example": {
+          "problem_fr": "Mets z = -1 + i sous forme trigonométrique.",
+          "steps": [
+            {
+              "step": 1,
+              "question_fr": "Calcule le module r = |z|.",
+              "answer_fr": "r = √((-1)² + 1²) = √2.",
+              "explanation_fr": "On applique |z| = √(x² + y²)."
+            },
+            {
+              "step": 2,
+              "question_fr": "Détermine un argument θ.",
+              "answer_fr": "θ = 3π/4.",
+              "explanation_fr": "Voir le concept d'argument : M est dans le quadrant II."
+            },
+            {
+              "step": 3,
+              "question_fr": "Écris la forme trigonométrique.",
+              "answer_fr": "z = √2 (cos(3π/4) + i sin(3π/4)).",
+              "explanation_fr": "On assemble module et argument dans la formule."
+            }
+          ],
+          "final_answer_fr": "z = √2 (cos(3π/4) + i sin(3π/4))."
+        },
+        "interactive_activity": {
+          "type": "matching",
+          "prompt_fr": "Associe chaque nombre complexe à sa forme trigonométrique.",
+          "pairs": [
+            {
+              "left": "z = 1 + i",
+              "right": "√2 (cos(π/4) + i sin(π/4))"
+            },
+            {
+              "left": "z = -1 + i",
+              "right": "√2 (cos(3π/4) + i sin(3π/4))"
+            },
+            {
+              "left": "z = -1 - i",
+              "right": "√2 (cos(-3π/4) + i sin(-3π/4))"
+            },
+            {
+              "left": "z = 1 - i",
+              "right": "√2 (cos(-π/4) + i sin(-π/4))"
+            }
+          ],
+          "visual_id": "visual_forme_trigo",
+          "instruction_fr": "Glisse chaque forme algébrique vers sa forme trigonométrique."
+        },
+        "common_mistakes": [
+          {
+            "misconception_id": "misconception_module_negatif_trigo",
+            "wrong_answer_fr": "Pour z = -1 + i, écrire z = -√2 (cos(π/4) + i sin(π/4)).",
+            "correct_answer_fr": "z = √2 (cos(3π/4) + i sin(3π/4)).",
+            "explanation_fr": "Le module doit être positif. Le signe est absorbé par l'angle, pas par le module."
+          },
+          {
+            "misconception_id": "misconception_signe_sin",
+            "wrong_answer_fr": "Écrire z = r(cos θ - i sin θ).",
+            "correct_answer_fr": "z = r(cos θ + i sin θ).",
+            "explanation_fr": "La forme trigonométrique standard utilise toujours +i sin θ. Le signe est dans θ."
+          }
+        ],
+        "mastery": {
+          "concept_id": "concept_forme_trigonometrique",
+          "mastery_threshold": 0.8,
+          "minimum_attempts": 3,
+          "review_if_failed": true,
+          "remediation_path": [
+            "revoir les formules module/argument",
+            "refaire un passage algébrique → trigonométrique",
+            "exercice facile"
+          ]
+        },
+        "internal": {
+          "source_pages": "non_fourni",
+          "provenance": "prompt_example",
+          "validation_status": "math_ok",
+          "review_status": "validated_for_demo"
+        }
+      },
+      {
+        "concept_id": "concept_forme_exponentielle",
+        "title_fr": "Forme exponentielle d'un nombre complexe",
+        "short_title_fr": "Forme exponentielle",
+        "prerequisites": [
+          "concept_forme_trigonometrique"
+        ],
+        "difficulty_default": 3,
+        "visual_required": true,
+        "explanation": {
+          "title_fr": "De la forme trigonométrique à la forme exponentielle",
+          "simple_explanation_fr": "Par définition, pour tout réel θ, on pose e^(iθ) = cos θ + i sin θ. Donc tout nombre complexe non nul z peut s'écrire z = r e^(iθ), où r = |z| et θ = arg(z). C'est la forme exponentielle. Elle rend les multiplications et les puissances beaucoup plus simples.",
+          "formula_latex": "e^{i\\theta} = \\cos\\theta + i\\sin\\theta \\quad \\Longrightarrow \\quad z = r\\, e^{i\\theta}",
+          "example": {
+            "statement_fr": "Mets z = 1 + i sous forme exponentielle.",
+            "steps_fr": [
+              "Module : r = √2.",
+              "Argument : θ = π/4.",
+              "On écrit : z = √2 · e^(iπ/4)."
+            ],
+            "result_fr": "z = √2 · e^(iπ/4)."
+          },
+          "important_point_fr": "La forme exponentielle condense module et argument en une seule expression. C'est l'écriture la plus pratique pour multiplier ou élever à une puissance.",
+          "common_mistake_fr": "Confondre e^(iθ) avec e^θ. Le i est indispensable : sans i, e^θ est un réel, pas un complexe du cercle unité."
+        },
+        "worked_example": {
+          "problem_fr": "Mets z = -1 + i sous forme exponentielle.",
+          "steps": [
+            {
+              "step": 1,
+              "question_fr": "Calcule r = |z|.",
+              "answer_fr": "r = √2.",
+              "explanation_fr": "Même module que pour la forme trigonométrique."
+            },
+            {
+              "step": 2,
+              "question_fr": "Détermine θ = arg(z).",
+              "answer_fr": "θ = 3π/4.",
+              "explanation_fr": "M est dans le quadrant II."
+            },
+            {
+              "step": 3,
+              "question_fr": "Écris la forme exponentielle.",
+              "answer_fr": "z = √2 · e^(i·3π/4).",
+              "explanation_fr": "On assemble module et exponentielle complexe."
+            }
+          ],
+          "final_answer_fr": "z = √2 · e^(i·3π/4)."
+        },
+        "interactive_activity": {
+          "type": "matching",
+          "prompt_fr": "Associe chaque forme trigonométrique à sa forme exponentielle.",
+          "pairs": [
+            {
+              "left": "√2 (cos(π/4) + i sin(π/4))",
+              "right": "√2 · e^(iπ/4)"
+            },
+            {
+              "left": "√2 (cos(3π/4) + i sin(3π/4))",
+              "right": "√2 · e^(i·3π/4)"
+            },
+            {
+              "left": "2 (cos(0) + i sin(0))",
+              "right": "2 · e^(i·0) = 2"
+            }
+          ],
+          "visual_id": "visual_forme_exp",
+          "instruction_fr": "Glisse chaque forme trigonométrique vers sa forme exponentielle."
+        },
+        "common_mistakes": [
+          {
+            "misconception_id": "misconception_exponentielle_sans_i",
+            "wrong_answer_fr": "Écrire z = r · e^θ (sans le i).",
+            "correct_answer_fr": "z = r · e^(iθ).",
+            "explanation_fr": "Sans le i, e^θ est un réel. Le i est indispensable pour un nombre complexe."
+          },
+          {
+            "misconception_id": "misconception_e_i_pi",
+            "wrong_answer_fr": "Dire que e^(iπ) = 1.",
+            "correct_answer_fr": "e^(iπ) = -1.",
+            "explanation_fr": "D'après la formule, e^(iπ) = cos(π) + i sin(π) = -1 + 0 = -1."
+          }
+        ],
+        "mastery": {
+          "concept_id": "concept_forme_exponentielle",
+          "mastery_threshold": 0.8,
+          "minimum_attempts": 3,
+          "review_if_failed": true,
+          "remediation_path": [
+            "revoir la définition e^(iθ) = cos θ + i sin θ",
+            "refaire un passage trigonométrique → exponentielle",
+            "exercice facile"
+          ]
+        },
+        "internal": {
+          "source_pages": "non_fourni",
+          "provenance": "prompt_example",
+          "validation_status": "math_ok",
+          "review_status": "validated_for_demo"
+        }
+      }
+    ],
+    "lessons": [
+      {
+        "lesson_id": "lesson_forme_algebrique",
+        "title_fr": "Forme algébrique d'un nombre complexe",
+        "learning_goal_fr": "Savoir écrire un nombre complexe sous la forme z = x + iy et reconnaître cette forme.",
+        "estimated_time_minutes": 8,
+        "prerequisites": [],
+        "concept_id": "concept_forme_algebrique",
+        "introduction_fr": "On découvre les nombres complexes, une extension des nombres réels qui permet de résoudre des équations sans solution dans R, comme x² + 1 = 0.",
+        "steps": [
+          {
+            "step": 1,
+            "title_fr": "Qu'est-ce qu'un nombre complexe ?",
+            "objective_fr": "Découvrir la forme algébrique z = x + iy.",
+            "duration_seconds": 75,
+            "content_fr": "Un nombre complexe s'écrit sous la forme z = x + iy, avec x et y réels et i² = -1.",
+            "formula_latex": "z = x + iy",
+            "visual_id": null
+          },
+          {
+            "step": 2,
+            "title_fr": "Reconnaître x et y",
+            "objective_fr": "Identifier la partie réelle et imaginaire dans une écriture.",
+            "duration_seconds": 70,
+            "content_fr": "Dans z = 3 + 4i, on a x = 3 et y = 4. Le nombre sans i est x, le nombre avec i est y.",
+            "formula_latex": "z = 3 + 4i \\implies x = 3,\\ y = 4",
+            "visual_id": null
+          },
+          {
+            "step": 3,
+            "title_fr": "Cas particulier : un nombre réel",
+            "objective_fr": "Comprendre qu'un réel est un complexe avec y = 0.",
+            "duration_seconds": 60,
+            "content_fr": "Le nombre 7 est un nombre complexe car on peut écrire 7 = 7 + 0i.",
+            "formula_latex": "7 = 7 + 0i",
+            "visual_id": null
+          },
+          {
+            "step": 4,
+            "title_fr": "Cas particulier : un imaginaire pur",
+            "objective_fr": "Comprendre qu'un imaginaire pur a x = 0.",
+            "duration_seconds": 60,
+            "content_fr": "Le nombre i s'écrit 0 + 1i. C'est un imaginaire pur.",
+            "formula_latex": "i = 0 + 1i",
+            "visual_id": null
+          },
+          {
+            "step": 5,
+            "title_fr": "Simplifier une expression contenant i²",
+            "objective_fr": "Utiliser i² = -1 pour simplifier.",
+            "duration_seconds": 80,
+            "content_fr": "Si on voit 3 + i², on remplace i² par -1, donc 3 + i² = 3 - 1 = 2.",
+            "formula_latex": "i^2 = -1 \\implies 3 + i^2 = 2",
+            "visual_id": null
+          },
+          {
+            "step": 6,
+            "title_fr": "Mini-évaluation",
+            "objective_fr": "Vérifier la reconnaissance de la forme algébrique.",
+            "duration_seconds": 90,
+            "content_fr": "Trois questions rapides pour valider la compréhension.",
+            "formula_latex": null,
+            "visual_id": null,
+            "quick_check_exercise_ids": [
+              "ex_forme_alg_q1",
+              "ex_forme_alg_q2",
+              "ex_forme_alg_q3"
+            ]
+          }
+        ],
+        "quick_check": [
+          {
+            "exercise_id": "ex_forme_alg_q1"
+          },
+          {
+            "exercise_id": "ex_forme_alg_q2"
+          },
+          {
+            "exercise_id": "ex_forme_alg_q3"
+          }
+        ],
+        "common_mistakes_ref": [
+          "misconception_i_variable",
+          "misconception_oubli_i"
+        ],
+        "mastery_check": {
+          "exercise_id": "ex_forme_alg_mastery",
+          "pass_threshold": 0.8
+        },
+        "review_rule": {
+          "if_failed_concept": "concept_forme_algebrique",
+          "action": "revoir étapes 1 à 5 puis refaire la mini-évaluation",
+          "minimum_attempts_before_review": 2
+        }
+      },
+      {
+        "lesson_id": "lesson_re_im",
+        "title_fr": "Partie réelle et partie imaginaire",
+        "learning_goal_fr": "Savoir identifier Re(z) et Im(z) pour tout nombre complexe écrit sous forme algébrique.",
+        "estimated_time_minutes": 7,
+        "prerequisites": [
+          "concept_forme_algebrique"
+        ],
+        "concept_id": "concept_re_im",
+        "introduction_fr": "Maintenant qu'on connaît la forme algébrique, apprenons à en extraire les deux composantes : la partie réelle et la partie imaginaire.",
+        "steps": [
+          {
+            "step": 1,
+            "title_fr": "Définition de Re(z)",
+            "objective_fr": "Identifier la partie réelle.",
+            "duration_seconds": 65,
+            "content_fr": "Dans z = x + iy, la partie réelle est x. On la note Re(z).",
+            "formula_latex": "Re(z) = x",
+            "visual_id": null
+          },
+          {
+            "step": 2,
+            "title_fr": "Définition de Im(z)",
+            "objective_fr": "Identifier la partie imaginaire.",
+            "duration_seconds": 70,
+            "content_fr": "Dans z = x + iy, la partie imaginaire est y, sans le i. On la note Im(z).",
+            "formula_latex": "Im(z) = y",
+            "visual_id": null
+          },
+          {
+            "step": 3,
+            "title_fr": "Exemple : z = 3 + 4i",
+            "objective_fr": "Appliquer les deux définitions.",
+            "duration_seconds": 60,
+            "content_fr": "Re(z) = 3 et Im(z) = 4. On lit directement les deux nombres.",
+            "formula_latex": "Re(z) = 3,\\ Im(z) = 4",
+            "visual_id": null
+          },
+          {
+            "step": 4,
+            "title_fr": "Attention au signe : z = -2 + 5i",
+            "objective_fr": "Gérer les signes négatifs.",
+            "duration_seconds": 70,
+            "content_fr": "Ici, Re(z) = -2 (avec le signe moins) et Im(z) = 5.",
+            "formula_latex": "Re(z) = -2,\\ Im(z) = 5",
+            "visual_id": null
+          },
+          {
+            "step": 5,
+            "title_fr": "Piège classique : Im(z) ≠ yi",
+            "objective_fr": "Éviter l'erreur de garder le i.",
+            "duration_seconds": 60,
+            "content_fr": "La partie imaginaire est un réel. Pour z = 3 + 4i, Im(z) = 4, pas 4i.",
+            "formula_latex": "Im(3 + 4i) = 4 \\neq 4i",
+            "visual_id": null
+          },
+          {
+            "step": 6,
+            "title_fr": "Mini-évaluation",
+            "objective_fr": "Valider la maîtrise de Re(z) et Im(z).",
+            "duration_seconds": 90,
+            "content_fr": "Trois questions rapides pour vérifier.",
+            "formula_latex": null,
+            "visual_id": null,
+            "quick_check_exercise_ids": [
+              "ex_re_im_q1",
+              "ex_re_im_q2",
+              "ex_re_im_q3"
+            ]
+          }
+        ],
+        "quick_check": [
+          {
+            "exercise_id": "ex_re_im_q1"
+          },
+          {
+            "exercise_id": "ex_re_im_q2"
+          },
+          {
+            "exercise_id": "ex_re_im_q3"
+          }
+        ],
+        "common_mistakes_ref": [
+          "misconception_imaginary_part",
+          "misconception_signe_re"
+        ],
+        "mastery_check": {
+          "exercise_id": "ex_re_im_mastery",
+          "pass_threshold": 0.8
+        },
+        "review_rule": {
+          "if_failed_concept": "concept_re_im",
+          "action": "revoir étapes 1 à 5 et refaire la mini-évaluation",
+          "minimum_attempts_before_review": 2
+        }
+      },
+      {
+        "lesson_id": "lesson_plan_complexe",
+        "title_fr": "Représentation dans le plan complexe",
+        "learning_goal_fr": "Savoir représenter un nombre complexe par un point et utiliser la notion d'affixe.",
+        "estimated_time_minutes": 9,
+        "prerequisites": [
+          "concept_re_im"
+        ],
+        "concept_id": "concept_plan_complexe",
+        "introduction_fr": "Un nombre complexe peut être vu géométriquement comme un point dans un plan. C'est l'idée du plan complexe.",
+        "steps": [
+          {
+            "step": 1,
+            "title_fr": "Le plan complexe",
+            "objective_fr": "Découvrir les deux axes du plan complexe.",
+            "duration_seconds": 75,
+            "content_fr": "L'axe horizontal porte les parties réelles, l'axe vertical porte les parties imaginaires.",
+            "formula_latex": null,
+            "visual_id": "visual_plan_complexe_axes"
+          },
+          {
+            "step": 2,
+            "title_fr": "Affixe d'un point",
+            "objective_fr": "Comprendre la correspondance z ↔ M.",
+            "duration_seconds": 70,
+            "content_fr": "Au nombre z = x + iy on associe le point M(x ; y). On dit que z est l'affixe de M.",
+            "formula_latex": "z = x + iy \\iff M(x,\\ y)",
+            "visual_id": null
+          },
+          {
+            "step": 3,
+            "title_fr": "Exemple : z = 3 + 4i",
+            "objective_fr": "Placer un premier point.",
+            "duration_seconds": 70,
+            "content_fr": "On avance de 3 sur l'axe horizontal et on monte de 4 sur l'axe vertical. On obtient M(3 ; 4).",
+            "formula_latex": "z = 3 + 4i \\iff M(3,\\ 4)",
+            "visual_id": "visual_point_M_affixe"
+          },
+          {
+            "step": 4,
+            "title_fr": "Avec un signe négatif : z = -2 + 5i",
+            "objective_fr": "Placer un point dans le quadrant II.",
+            "duration_seconds": 70,
+            "content_fr": "On recule de 2 et on monte de 5. Le point M(-2 ; 5) est dans le quadrant supérieur gauche.",
+            "formula_latex": "z = -2 + 5i \\iff M(-2,\\ 5)",
+            "visual_id": null
+          },
+          {
+            "step": 5,
+            "title_fr": "Activité interactive : placer M",
+            "objective_fr": "Manipuler le point dans le plan.",
+            "duration_seconds": 90,
+            "content_fr": "Glisse le point M pour qu'il représente z = -2 + 5i.",
+            "formula_latex": null,
+            "visual_id": "visual_point_M_affixe",
+            "interactive_exercise_id": "ex_plan_q_interactive"
+          },
+          {
+            "step": 6,
+            "title_fr": "Mini-évaluation",
+            "objective_fr": "Valider la correspondance z ↔ M.",
+            "duration_seconds": 90,
+            "content_fr": "Trois questions rapides.",
+            "formula_latex": null,
+            "visual_id": null,
+            "quick_check_exercise_ids": [
+              "ex_plan_q1",
+              "ex_plan_q2",
+              "ex_plan_q3"
+            ]
+          }
+        ],
+        "quick_check": [
+          {
+            "exercise_id": "ex_plan_q1"
+          },
+          {
+            "exercise_id": "ex_plan_q2"
+          },
+          {
+            "exercise_id": "ex_plan_q3"
+          }
+        ],
+        "common_mistakes_ref": [
+          "misconception_axes_inverses",
+          "misconception_affixe_vs_coordonnees"
+        ],
+        "mastery_check": {
+          "exercise_id": "ex_plan_mastery",
+          "pass_threshold": 0.8
+        },
+        "review_rule": {
+          "if_failed_concept": "concept_plan_complexe",
+          "action": "revoir les étapes 1 à 5 et refaire l'activité interactive",
+          "minimum_attempts_before_review": 2
+        }
+      },
+      {
+        "lesson_id": "lesson_conjugue",
+        "title_fr": "Conjugué d'un nombre complexe",
+        "learning_goal_fr": "Savoir calculer le conjugué d'un nombre complexe et le représenter géométriquement.",
+        "estimated_time_minutes": 8,
+        "prerequisites": [
+          "concept_re_im"
+        ],
+        "concept_id": "concept_conjugue",
+        "introduction_fr": "Le conjugué est une opération simple mais très utile. On va voir qu'elle a une belle interprétation géométrique.",
+        "steps": [
+          {
+            "step": 1,
+            "title_fr": "Définition du conjugué",
+            "objective_fr": "Connaître la règle du conjugué.",
+            "duration_seconds": 70,
+            "content_fr": "Le conjugué de z = x + iy est z̄ = x - iy. On change uniquement le signe de la partie imaginaire.",
+            "formula_latex": "z = x + iy \\implies \\bar{z} = x - iy",
+            "visual_id": null
+          },
+          {
+            "step": 2,
+            "title_fr": "Exemple : z = 3 + 4i",
+            "objective_fr": "Appliquer la règle.",
+            "duration_seconds": 60,
+            "content_fr": "On garde 3, on change 4 en -4. Donc z̄ = 3 - 4i.",
+            "formula_latex": "\\overline{3 + 4i} = 3 - 4i",
+            "visual_id": null
+          },
+          {
+            "step": 3,
+            "title_fr": "Avec un signe négatif : z = -2 + 5i",
+            "objective_fr": "Gérer les signes.",
+            "duration_seconds": 70,
+            "content_fr": "On garde -2, on change 5 en -5. Donc z̄ = -2 - 5i.",
+            "formula_latex": "\\overline{-2 + 5i} = -2 - 5i",
+            "visual_id": null
+          },
+          {
+            "step": 4,
+            "title_fr": "Interprétation géométrique",
+            "objective_fr": "Voir la symétrie par rapport à l'axe réel.",
+            "duration_seconds": 80,
+            "content_fr": "Le point associé à z̄ est le symétrique du point associé à z par rapport à l'axe des réels.",
+            "formula_latex": null,
+            "visual_id": "visual_conjugue_symetrie"
+          },
+          {
+            "step": 5,
+            "title_fr": "Cas particulier : z réel",
+            "objective_fr": "Comprendre que le conjugué d'un réel est lui-même.",
+            "duration_seconds": 60,
+            "content_fr": "Si z est réel, alors Im(z) = 0, donc z̄ = z. Le conjugué d'un réel ne change rien.",
+            "formula_latex": "z \\in \\mathbb{R} \\implies \\bar{z} = z",
+            "visual_id": null
+          },
+          {
+            "step": 6,
+            "title_fr": "Mini-évaluation",
+            "objective_fr": "Valider le calcul du conjugué.",
+            "duration_seconds": 90,
+            "content_fr": "Trois questions rapides.",
+            "formula_latex": null,
+            "visual_id": null,
+            "quick_check_exercise_ids": [
+              "ex_conj_q1",
+              "ex_conj_q2",
+              "ex_conj_q3"
+            ]
+          }
+        ],
+        "quick_check": [
+          {
+            "exercise_id": "ex_conj_q1"
+          },
+          {
+            "exercise_id": "ex_conj_q2"
+          },
+          {
+            "exercise_id": "ex_conj_q3"
+          }
+        ],
+        "common_mistakes_ref": [
+          "misconception_conjugue_signe_re",
+          "misconception_conjugue_egal_z"
+        ],
+        "mastery_check": {
+          "exercise_id": "ex_conj_mastery",
+          "pass_threshold": 0.8
+        },
+        "review_rule": {
+          "if_failed_concept": "concept_conjugue",
+          "action": "revoir les étapes 1 à 5 et refaire la mini-évaluation",
+          "minimum_attempts_before_review": 2
+        }
+      },
+      {
+        "lesson_id": "lesson_module",
+        "title_fr": "Module d'un nombre complexe",
+        "learning_goal_fr": "Savoir calculer le module d'un nombre complexe à partir de sa forme algébrique.",
+        "estimated_time_minutes": 9,
+        "prerequisites": [
+          "concept_re_im",
+          "concept_plan_complexe"
+        ],
+        "concept_id": "concept_module",
+        "introduction_fr": "Le module est la distance qui sépare l'origine du point représentant le nombre complexe. On le calcule avec Pythagore.",
+        "steps": [
+          {
+            "step": 1,
+            "title_fr": "Définition géométrique",
+            "objective_fr": "Voir le module comme une distance.",
+            "duration_seconds": 70,
+            "content_fr": "Le module |z| est la longueur du segment OM, où M est le point d'affixe z.",
+            "formula_latex": "|z| = OM",
+            "visual_id": "visual_module_OM"
+          },
+          {
+            "step": 2,
+            "title_fr": "Formule de calcul",
+            "objective_fr": "Connaître la formule |z| = √(x² + y²).",
+            "duration_seconds": 70,
+            "content_fr": "Par le théorème de Pythagore, |z| = √(x² + y²).",
+            "formula_latex": "|z| = \\sqrt{x^2 + y^2}",
+            "visual_id": null
+          },
+          {
+            "step": 3,
+            "title_fr": "Exemple : z = 3 + 4i",
+            "objective_fr": "Appliquer la formule sur un cas simple.",
+            "duration_seconds": 75,
+            "content_fr": "x² + y² = 9 + 16 = 25, donc |z| = √25 = 5.",
+            "formula_latex": "|3 + 4i| = \\sqrt{3^2 + 4^2} = 5",
+            "visual_id": null
+          },
+          {
+            "step": 4,
+            "title_fr": "Avec un signe négatif : z = -2 + 5i",
+            "objective_fr": "Comprendre que le signe n'a pas d'importance au carré.",
+            "duration_seconds": 75,
+            "content_fr": "(-2)² = 4 et 5² = 25, donc |z| = √29 ≈ 5,39.",
+            "formula_latex": "|-2 + 5i| = \\sqrt{(-2)^2 + 5^2} = \\sqrt{29}",
+            "visual_id": null
+          },
+          {
+            "step": 5,
+            "title_fr": "Propriété : |z| ≥ 0",
+            "objective_fr": "Retenir que le module est positif ou nul.",
+            "duration_seconds": 60,
+            "content_fr": "Un module est une distance, donc il est toujours positif ou nul. |z| = 0 seulement si z = 0.",
+            "formula_latex": "|z| \\geq 0",
+            "visual_id": null
+          },
+          {
+            "step": 6,
+            "title_fr": "Mini-évaluation",
+            "objective_fr": "Valider le calcul du module.",
+            "duration_seconds": 90,
+            "content_fr": "Trois questions rapides.",
+            "formula_latex": null,
+            "visual_id": null,
+            "quick_check_exercise_ids": [
+              "ex_mod_q1",
+              "ex_mod_q2",
+              "ex_mod_q3"
+            ]
+          }
+        ],
+        "quick_check": [
+          {
+            "exercise_id": "ex_mod_q1"
+          },
+          {
+            "exercise_id": "ex_mod_q2"
+          },
+          {
+            "exercise_id": "ex_mod_q3"
+          }
+        ],
+        "common_mistakes_ref": [
+          "misconception_module_sans_racine",
+          "misconception_module_negatif"
+        ],
+        "mastery_check": {
+          "exercise_id": "ex_mod_mastery",
+          "pass_threshold": 0.8
+        },
+        "review_rule": {
+          "if_failed_concept": "concept_module",
+          "action": "revoir les étapes 1 à 5 et refaire la mini-évaluation",
+          "minimum_attempts_before_review": 2
+        }
+      },
+      {
+        "lesson_id": "lesson_argument",
+        "title_fr": "Argument d'un nombre complexe",
+        "learning_goal_fr": "Savoir déterminer un argument d'un nombre complexe non nul en tenant compte du quadrant.",
+        "estimated_time_minutes": 10,
+        "prerequisites": [
+          "concept_plan_complexe",
+          "concept_module"
+        ],
+        "concept_id": "concept_argument",
+        "introduction_fr": "L'argument est l'angle qui repère la direction du point M dans le plan complexe. C'est le compagnon naturel du module.",
+        "steps": [
+          {
+            "step": 1,
+            "title_fr": "Définition de l'argument",
+            "objective_fr": "Comprendre arg(z) comme un angle orienté.",
+            "duration_seconds": 80,
+            "content_fr": "L'argument de z est l'angle θ entre l'axe réel positif et la demi-droite [OM). Il est défini à 2π près.",
+            "formula_latex": "\\arg(z) = \\theta \\pmod{2\\pi}",
+            "visual_id": "visual_argument_theta"
+          },
+          {
+            "step": 2,
+            "title_fr": "Lien avec tan : tan(θ) = y/x",
+            "objective_fr": "Connaître la formule de calcul.",
+            "duration_seconds": 70,
+            "content_fr": "On a tan(θ) = Im(z)/Re(z) = y/x. Mais il faut vérifier le quadrant.",
+            "formula_latex": "\\tan\\theta = \\dfrac{y}{x}",
+            "visual_id": null
+          },
+          {
+            "step": 3,
+            "title_fr": "Exemple simple : z = 1 + i",
+            "objective_fr": "Calculer un argument dans le quadrant I.",
+            "duration_seconds": 75,
+            "content_fr": "M(1 ; 1) est dans le quadrant I, triangle isocèle rectangle, donc θ = π/4.",
+            "formula_latex": "\\arg(1 + i) = \\dfrac{\\pi}{4}",
+            "visual_id": null
+          },
+          {
+            "step": 4,
+            "title_fr": "Avec un quadrant II : z = -1 + i",
+            "objective_fr": "Ajuster l'argument selon le quadrant.",
+            "duration_seconds": 85,
+            "content_fr": "tan(θ) = -1, arctan donne -π/4. Comme M est dans le quadrant II, on ajoute π : θ = 3π/4.",
+            "formula_latex": "\\arg(-1 + i) = \\dfrac{3\\pi}{4}",
+            "visual_id": null
+          },
+          {
+            "step": 5,
+            "title_fr": "arg(0) n'existe pas",
+            "objective_fr": "Retenir que le module nul empêche l'argument.",
+            "duration_seconds": 60,
+            "content_fr": "Si z = 0, le point M est confondu avec O, il n'y a pas d'angle défini. arg(0) n'existe pas.",
+            "formula_latex": "\\arg(0)\\ \\text{n'est pas défini}",
+            "visual_id": null
+          },
+          {
+            "step": 6,
+            "title_fr": "Mini-évaluation",
+            "objective_fr": "Valider la détermination d'un argument.",
+            "duration_seconds": 90,
+            "content_fr": "Trois questions rapides.",
+            "formula_latex": null,
+            "visual_id": null,
+            "quick_check_exercise_ids": [
+              "ex_arg_q1",
+              "ex_arg_q2",
+              "ex_arg_q3"
+            ]
+          }
+        ],
+        "quick_check": [
+          {
+            "exercise_id": "ex_arg_q1"
+          },
+          {
+            "exercise_id": "ex_arg_q2"
+          },
+          {
+            "exercise_id": "ex_arg_q3"
+          }
+        ],
+        "common_mistakes_ref": [
+          "misconception_argument_quadrant",
+          "misconception_argument_zero"
+        ],
+        "mastery_check": {
+          "exercise_id": "ex_arg_mastery",
+          "pass_threshold": 0.8
+        },
+        "review_rule": {
+          "if_failed_concept": "concept_argument",
+          "action": "revoir les étapes 1 à 5 et refaire un exemple par quadrant",
+          "minimum_attempts_before_review": 3
+        }
+      },
+      {
+        "lesson_id": "lesson_forme_trigonometrique",
+        "title_fr": "Forme trigonométrique",
+        "learning_goal_fr": "Savoir écrire un nombre complexe non nul sous la forme z = r(cos θ + i sin θ).",
+        "estimated_time_minutes": 9,
+        "prerequisites": [
+          "concept_module",
+          "concept_argument"
+        ],
+        "concept_id": "concept_forme_trigonometrique",
+        "introduction_fr": "On rassemble module et argument en une seule écriture très utile : la forme trigonométrique.",
+        "steps": [
+          {
+            "step": 1,
+            "title_fr": "La formule",
+            "objective_fr": "Connaître la forme trigonométrique.",
+            "duration_seconds": 70,
+            "content_fr": "Tout z non nul s'écrit z = r(cos θ + i sin θ), avec r = |z| > 0 et θ = arg(z).",
+            "formula_latex": "z = r\\left(\\cos\\theta + i\\sin\\theta\\right)",
+            "visual_id": "visual_forme_trigo"
+          },
+          {
+            "step": 2,
+            "title_fr": "Étape 1 : calculer r",
+            "objective_fr": "Calculer le module.",
+            "duration_seconds": 60,
+            "content_fr": "On commence toujours par r = |z| = √(x² + y²).",
+            "formula_latex": "r = \\sqrt{x^2 + y^2}",
+            "visual_id": null
+          },
+          {
+            "step": 3,
+            "title_fr": "Étape 2 : déterminer θ",
+            "objective_fr": "Calculer un argument.",
+            "duration_seconds": 70,
+            "content_fr": "On trouve θ = arg(z) en tenant compte du quadrant.",
+            "formula_latex": "\\theta = \\arg(z)",
+            "visual_id": null
+          },
+          {
+            "step": 4,
+            "title_fr": "Exemple complet : z = 1 + i",
+            "objective_fr": "Réunir module et argument.",
+            "duration_seconds": 80,
+            "content_fr": "r = √2 et θ = π/4, donc z = √2 (cos(π/4) + i sin(π/4)).",
+            "formula_latex": "1 + i = \\sqrt{2}\\left(\\cos\\dfrac{\\pi}{4} + i\\sin\\dfrac{\\pi}{4}\\right)",
+            "visual_id": null
+          },
+          {
+            "step": 5,
+            "title_fr": "Piège : r doit être positif",
+            "objective_fr": "Éviter de mettre un signe négatif sur r.",
+            "duration_seconds": 70,
+            "content_fr": "Pour z = -1 + i, on a r = √2 > 0 et θ = 3π/4. On n'écrit jamais -√2 : le signe est dans θ.",
+            "formula_latex": "-1 + i = \\sqrt{2}\\left(\\cos\\dfrac{3\\pi}{4} + i\\sin\\dfrac{3\\pi}{4}\\right)",
+            "visual_id": null
+          },
+          {
+            "step": 6,
+            "title_fr": "Mini-évaluation",
+            "objective_fr": "Valider le passage à la forme trigonométrique.",
+            "duration_seconds": 90,
+            "content_fr": "Trois questions rapides.",
+            "formula_latex": null,
+            "visual_id": null,
+            "quick_check_exercise_ids": [
+              "ex_trigo_q1",
+              "ex_trigo_q2",
+              "ex_trigo_q3"
+            ]
+          }
+        ],
+        "quick_check": [
+          {
+            "exercise_id": "ex_trigo_q1"
+          },
+          {
+            "exercise_id": "ex_trigo_q2"
+          },
+          {
+            "exercise_id": "ex_trigo_q3"
+          }
+        ],
+        "common_mistakes_ref": [
+          "misconception_module_negatif_trigo",
+          "misconception_signe_sin"
+        ],
+        "mastery_check": {
+          "exercise_id": "ex_trigo_mastery",
+          "pass_threshold": 0.8
+        },
+        "review_rule": {
+          "if_failed_concept": "concept_forme_trigonometrique",
+          "action": "revoir les étapes 1 à 5 et refaire un passage algébrique → trigonométrique",
+          "minimum_attempts_before_review": 2
+        }
+      },
+      {
+        "lesson_id": "lesson_forme_exponentielle",
+        "title_fr": "Forme exponentielle",
+        "learning_goal_fr": "Savoir écrire un nombre complexe sous la forme z = r·e^(iθ) et passer d'une forme à l'autre.",
+        "estimated_time_minutes": 8,
+        "prerequisites": [
+          "concept_forme_trigonometrique"
+        ],
+        "concept_id": "concept_forme_exponentielle",
+        "introduction_fr": "La forme exponentielle est un raccourci d'écriture très puissant, surtout pour multiplier ou élever à une puissance.",
+        "steps": [
+          {
+            "step": 1,
+            "title_fr": "La définition e^(iθ) = cos θ + i sin θ",
+            "objective_fr": "Connaître la définition de l'exponentielle complexe.",
+            "duration_seconds": 75,
+            "content_fr": "Par définition, e^(iθ) = cos θ + i sin θ. C'est une notation condensée.",
+            "formula_latex": "e^{i\\theta} = \\cos\\theta + i\\sin\\theta",
+            "visual_id": "visual_forme_exp"
+          },
+          {
+            "step": 2,
+            "title_fr": "Forme exponentielle de z",
+            "objective_fr": "Écrire z = r·e^(iθ).",
+            "duration_seconds": 70,
+            "content_fr": "Donc z = r(cos θ + i sin θ) se réécrit z = r·e^(iθ).",
+            "formula_latex": "z = r\\, e^{i\\theta}",
+            "visual_id": null
+          },
+          {
+            "step": 3,
+            "title_fr": "Exemple : z = 1 + i",
+            "objective_fr": "Passer de la forme algébrique à la forme exponentielle.",
+            "duration_seconds": 75,
+            "content_fr": "r = √2 et θ = π/4, donc z = √2 · e^(iπ/4).",
+            "formula_latex": "1 + i = \\sqrt{2}\\, e^{i\\pi/4}",
+            "visual_id": null
+          },
+          {
+            "step": 4,
+            "title_fr": "Avec un quadrant II : z = -1 + i",
+            "objective_fr": "Réécrire un nombre du quadrant II.",
+            "duration_seconds": 75,
+            "content_fr": "r = √2 et θ = 3π/4, donc z = √2 · e^(i·3π/4).",
+            "formula_latex": "-1 + i = \\sqrt{2}\\, e^{i\\,3\\pi/4}",
+            "visual_id": null
+          },
+          {
+            "step": 5,
+            "title_fr": "Le i est obligatoire",
+            "objective_fr": "Éviter d'oublier le i dans l'exponentielle.",
+            "duration_seconds": 60,
+            "content_fr": "e^(iθ) est complexe, mais e^θ est réel. Le i est indispensable.",
+            "formula_latex": "e^{i\\theta} \\neq e^{\\theta}",
+            "visual_id": null
+          },
+          {
+            "step": 6,
+            "title_fr": "Mini-évaluation",
+            "objective_fr": "Valider la forme exponentielle.",
+            "duration_seconds": 90,
+            "content_fr": "Trois questions rapides.",
+            "formula_latex": null,
+            "visual_id": null,
+            "quick_check_exercise_ids": [
+              "ex_exp_q1",
+              "ex_exp_q2",
+              "ex_exp_q3"
+            ]
+          }
+        ],
+        "quick_check": [
+          {
+            "exercise_id": "ex_exp_q1"
+          },
+          {
+            "exercise_id": "ex_exp_q2"
+          },
+          {
+            "exercise_id": "ex_exp_q3"
+          }
+        ],
+        "common_mistakes_ref": [
+          "misconception_exponentielle_sans_i",
+          "misconception_e_i_pi"
+        ],
+        "mastery_check": {
+          "exercise_id": "ex_exp_mastery",
+          "pass_threshold": 0.8
+        },
+        "review_rule": {
+          "if_failed_concept": "concept_forme_exponentielle",
+          "action": "revoir les étapes 1 à 5 et refaire un passage trigonométrique → exponentielle",
+          "minimum_attempts_before_review": 2
+        }
+      }
+    ],
+    "visuals": [
+      {
+        "visual_id": "visual_plan_complexe_axes",
+        "type": "svg",
+        "caption_fr": "Le plan complexe : axe horizontal des réels, axe vertical des imaginaires.",
+        "alt_text_fr": "Deux axes perpendiculaires se croisent en O. L'axe horizontal est noté 'Réels (Re)' et l'axe vertical est noté 'Imaginaires (Im)'. Les quatre quadrants sont visibles.",
+        "concept_ids": [
+          "concept_plan_complexe"
+        ],
+        "svg_viewbox": "0 0 300 300",
+        "svg_deterministic": true,
+        "svg_source_ref": "axes + grille + labels Re/Im + origine O"
+      },
+      {
+        "visual_id": "visual_point_M_affixe",
+        "type": "svg",
+        "caption_fr": "Le point M(3 ; 4) représente le nombre complexe z = 3 + 4i.",
+        "alt_text_fr": "Dans le plan complexe, un point M est placé aux coordonnées (3 ; 4). Des pointillés relient M à l'axe des réels (à 3) et à l'axe des imaginaires (à 4). Le nombre z = 3 + 4i est l'affixe de M.",
+        "concept_ids": [
+          "concept_plan_complexe"
+        ],
+        "svg_viewbox": "0 0 300 300",
+        "svg_deterministic": true,
+        "svg_source_ref": "axes + point M(3,4) + pointillés + labels x=3, y=4"
+      },
+      {
+        "visual_id": "visual_conjugue_symetrie",
+        "type": "svg",
+        "caption_fr": "Le conjugué z̄ = 3 - 4i est le symétrique de z = 3 + 4i par rapport à l'axe des réels.",
+        "alt_text_fr": "Deux points symétriques par rapport à l'axe horizontal : M en haut à droite pour z = 3 + 4i, et M' en bas à droite pour z̄ = 3 - 4i. Une pointillée horizontale (l'axe réel) sert d'axe de symétrie.",
+        "concept_ids": [
+          "concept_conjugue"
+        ],
+        "svg_viewbox": "0 0 300 300",
+        "svg_deterministic": true,
+        "svg_source_ref": "axes + M(3,4) + M'(3,-4) + axe réel en évidence"
+      },
+      {
+        "visual_id": "visual_module_OM",
+        "type": "svg",
+        "caption_fr": "Le module |z| est la longueur du segment OM pour z = 3 + 4i.",
+        "alt_text_fr": "Le point M(3 ; 4) est relié à l'origine O par un segment rouge. Un triangle rectangle est dessiné en pointillés avec les côtés 3 et 4. La longueur OM vaut 5, c'est le module.",
+        "concept_ids": [
+          "concept_module"
+        ],
+        "svg_viewbox": "0 0 300 300",
+        "svg_deterministic": true,
+        "svg_source_ref": "axes + M(3,4) + segment OM rouge + triangle 3-4-5 en pointillés"
+      },
+      {
+        "visual_id": "visual_argument_theta",
+        "type": "svg",
+        "caption_fr": "L'argument arg(z) est l'angle θ entre l'axe réel et la demi-droite [OM).",
+        "alt_text_fr": "Le point M(1 ; 1) est placé dans le quadrant I. L'angle θ entre l'axe horizontal positif et la demi-droite OM est dessiné en arc bleu. Sa mesure est π/4.",
+        "concept_ids": [
+          "concept_argument"
+        ],
+        "svg_viewbox": "0 0 300 300",
+        "svg_deterministic": true,
+        "svg_source_ref": "axes + M(1,1) + demi-droite OM + arc d'angle θ bleu"
+      },
+      {
+        "visual_id": "visual_forme_trigo",
+        "type": "svg",
+        "caption_fr": "Lien entre (x ; y), (r ; θ) et la forme trigonométrique z = r(cos θ + i sin θ).",
+        "alt_text_fr": "Un point M dans le plan complexe. Le segment OM représente le module r. L'angle entre l'axe réel et OM représente θ. Les projections de M sur les axes donnent x = r cos θ et y = r sin θ.",
+        "concept_ids": [
+          "concept_forme_trigonometrique"
+        ],
+        "svg_viewbox": "0 0 300 300",
+        "svg_deterministic": true,
+        "svg_source_ref": "axes + M + segment OM (r) + angle θ + projections x=r·cosθ, y=r·sinθ"
+      },
+      {
+        "visual_id": "visual_forme_exp",
+        "type": "svg",
+        "caption_fr": "Passage de la forme trigonométrique à la forme exponentielle z = r e^(iθ).",
+        "alt_text_fr": "Le même point M que dans le visuel précédent, avec r et θ. Une flèche indique la réécriture : r(cos θ + i sin θ) devient r·e^(iθ). Les deux écritures représentent le même nombre.",
+        "concept_ids": [
+          "concept_forme_exponentielle"
+        ],
+        "svg_viewbox": "0 0 300 300",
+        "svg_deterministic": true,
+        "svg_source_ref": "axes + M + r + θ + annotation réécriture trig→exp"
+      }
+    ],
+    "exercises": [
+      {
+        "exercise_id": "ex_forme_alg_q1",
+        "concept_id": "concept_forme_algebrique",
+        "lesson_id": "lesson_forme_algebrique",
+        "type": "MCQ",
+        "difficulty": 1,
+        "question_fr": "Lequel de ces nombres est écrit sous forme algébrique z = x + iy ?",
+        "options": [
+          {
+            "key": "A",
+            "text_fr": "z = 5 - 2i"
+          },
+          {
+            "key": "B",
+            "text_fr": "z = 3 + i²"
+          },
+          {
+            "key": "C",
+            "text_fr": "z = (1 + i)²"
+          },
+          {
+            "key": "D",
+            "text_fr": "z = 2i + i²"
+          }
+        ],
+        "correct_answer": "A",
+        "feedback_correct_fr": "Très bien ! 5 - 2i est bien de la forme x + iy avec x = 5 et y = -2.",
+        "feedback_incorrect_fr": "Regarde les options contenant i² : il faut simplifier avant. Seule 5 - 2i est déjà sous forme algébrique.",
+        "hint_level_1_fr": "La forme algébrique ne doit contenir ni i², ni puissance de (1+i).",
+        "hint_level_2_fr": "Élimine les options où i² ou (1+i)² apparaît : il faut d'abord simplifier.",
+        "hint_level_3_fr": "Seule l'option A est déjà sous la forme x + iy.",
+        "misconception_ref": "misconception_i_variable",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_forme_alg_q2",
+        "concept_id": "concept_forme_algebrique",
+        "lesson_id": "lesson_forme_algebrique",
+        "type": "math_input",
+        "difficulty": 1,
+        "question_fr": "Simplifie le nombre z = 3 + i² et donne sa forme algébrique.",
+        "expected_answer": "2",
+        "accepted_answers": [
+          "2",
+          "2+0i"
+        ],
+        "feedback_correct_fr": "Parfait ! Comme i² = -1, on a z = 3 - 1 = 2.",
+        "feedback_incorrect_fr": "Rappelle-toi : i² = -1. Donc 3 + i² = 3 + (-1) = 2.",
+        "hint_level_1_fr": "Que vaut i² ?",
+        "hint_level_2_fr": "i² = -1, donc remplace i² par -1.",
+        "hint_level_3_fr": "3 + i² = 3 + (-1) = 2.",
+        "misconception_ref": "misconception_i_variable",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_forme_alg_q3",
+        "concept_id": "concept_forme_algebrique",
+        "lesson_id": "lesson_forme_algebrique",
+        "type": "true_false",
+        "difficulty": 1,
+        "question_fr": "Le nombre 7 est un nombre complexe.",
+        "expected_answer": true,
+        "feedback_correct_fr": "Exact ! Tout réel est un complexe : on peut écrire 7 = 7 + 0i.",
+        "feedback_incorrect_fr": "Un réel est un cas particulier de complexe (avec partie imaginaire nulle). 7 = 7 + 0i.",
+        "hint_level_1_fr": "Rappelle-toi qu'un réel a Im(z) = 0.",
+        "hint_level_2_fr": "7 peut s'écrire 7 + 0i, qui est de la forme x + iy.",
+        "hint_level_3_fr": "Donc 7 est bien un nombre complexe.",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_forme_alg_mastery",
+        "concept_id": "concept_forme_algebrique",
+        "lesson_id": "lesson_forme_algebrique",
+        "type": "multiple_choice",
+        "difficulty": 2,
+        "question_fr": "Coche toutes les écritures qui sont déjà sous forme algébrique z = x + iy.",
+        "options": [
+          {
+            "key": "A",
+            "text_fr": "z = -3 + 7i",
+            "correct": true
+          },
+          {
+            "key": "B",
+            "text_fr": "z = 4",
+            "correct": true
+          },
+          {
+            "key": "C",
+            "text_fr": "z = 2i - i²",
+            "correct": false
+          },
+          {
+            "key": "D",
+            "text_fr": "z = -i",
+            "correct": true
+          }
+        ],
+        "feedback_correct_fr": "Bravo ! A, B et D sont sous forme algébrique (B = 4 + 0i, D = 0 - 1i). C contient i² et doit être simplifié.",
+        "feedback_incorrect_fr": "A, B et D sont sous forme algébrique. C non, car il contient i² qu'il faut simplifier en -1.",
+        "hint_level_1_fr": "Une forme algébrique ne contient que des termes en x et en iy.",
+        "hint_level_2_fr": "i² doit être simplifié. Les réels et les imaginaires purs comptent.",
+        "hint_level_3_fr": "A, B et D sont déjà sous forme algébrique. C ne l'est pas.",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_re_im_q1",
+        "concept_id": "concept_re_im",
+        "lesson_id": "lesson_re_im",
+        "type": "MCQ",
+        "difficulty": 1,
+        "question_fr": "Soit z = -2 + 5i. Quelle est la partie réelle de z ?",
+        "options": [
+          {
+            "key": "A",
+            "text_fr": "-2"
+          },
+          {
+            "key": "B",
+            "text_fr": "5"
+          },
+          {
+            "key": "C",
+            "text_fr": "5i"
+          },
+          {
+            "key": "D",
+            "text_fr": "-2 + 5i"
+          }
+        ],
+        "correct_answer": "A",
+        "feedback_correct_fr": "Très bien ! Dans z = x + iy, la partie réelle est x. Ici, x = -2.",
+        "feedback_incorrect_fr": "Attention : la partie réelle est le nombre qui ne contient pas i. Ici, elle vaut -2 (avec le signe).",
+        "hint_level_1_fr": "Rappelle-toi la forme z = x + iy.",
+        "hint_level_2_fr": "Dans z = x + iy, la partie réelle est x, sans le i.",
+        "hint_level_3_fr": "Dans z = -2 + 5i, le nombre sans i est -2. Donc Re(z) = -2.",
+        "misconception_ref": "misconception_signe_re",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_re_im_q2",
+        "concept_id": "concept_re_im",
+        "lesson_id": "lesson_re_im",
+        "type": "MCQ",
+        "difficulty": 1,
+        "question_fr": "Soit z = 3 + 4i. Quelle est la partie imaginaire de z ?",
+        "options": [
+          {
+            "key": "A",
+            "text_fr": "4i"
+          },
+          {
+            "key": "B",
+            "text_fr": "4"
+          },
+          {
+            "key": "C",
+            "text_fr": "3"
+          },
+          {
+            "key": "D",
+            "text_fr": "3 + 4i"
+          }
+        ],
+        "correct_answer": "B",
+        "feedback_correct_fr": "Parfait ! La partie imaginaire est le coefficient de i, donc 4 (sans le i).",
+        "feedback_incorrect_fr": "Attention : la partie imaginaire est le coefficient de i, pas le terme 4i entier. Ici, Im(z) = 4.",
+        "hint_level_1_fr": "Im(z) est le nombre y dans z = x + iy.",
+        "hint_level_2_fr": "Im(z) ne contient pas le symbole i.",
+        "hint_level_3_fr": "Dans z = 3 + 4i, le coefficient de i est 4. Donc Im(z) = 4.",
+        "misconception_ref": "misconception_imaginary_part",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_re_im_q3",
+        "concept_id": "concept_re_im",
+        "lesson_id": "lesson_re_im",
+        "type": "fill_blank",
+        "difficulty": 2,
+        "question_fr": "Complète : pour z = 6 - 9i, on a Re(z) = __ et Im(z) = __.",
+        "blanks": [
+          {
+            "id": "b1",
+            "expected_answer": "6"
+          },
+          {
+            "id": "b2",
+            "expected_answer": "-9"
+          }
+        ],
+        "feedback_correct_fr": "Excellent ! Tu as bien respecté les signes : Re(z) = 6 et Im(z) = -9.",
+        "feedback_incorrect_fr": "Vérifie les signes. Re(z) est le nombre sans i : 6. Im(z) est le coefficient de i : -9 (avec le signe moins).",
+        "hint_level_1_fr": "Re(z) est sans i, Im(z) est le coefficient de i.",
+        "hint_level_2_fr": "Le signe de la partie imaginaire est aussi important que le nombre.",
+        "hint_level_3_fr": "Dans z = 6 - 9i, Re(z) = 6 et Im(z) = -9.",
+        "misconception_ref": "misconception_signe_re",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_re_im_mastery",
+        "concept_id": "concept_re_im",
+        "lesson_id": "lesson_re_im",
+        "type": "math_input",
+        "difficulty": 3,
+        "question_fr": "Soit z = (3 + 4i) + (1 - 2i). Calcule Re(z) et Im(z) sous la forme Re,Im (par exemple : 5,2).",
+        "expected_answer": "4,2",
+        "accepted_answers": [
+          "4,2",
+          "4;2",
+          "4 2",
+          "Re=4, Im=2"
+        ],
+        "feedback_correct_fr": "Bravo ! (3 + 4i) + (1 - 2i) = 4 + 2i, donc Re(z) = 4 et Im(z) = 2.",
+        "feedback_incorrect_fr": "Additionne terme à terme : (3 + 1) + (4i - 2i) = 4 + 2i. Donc Re(z) = 4, Im(z) = 2.",
+        "hint_level_1_fr": "Additionne séparément les parties réelles et les parties imaginaires.",
+        "hint_level_2_fr": "Re(z) = 3 + 1 = 4. Im(z) = 4 - 2 = 2.",
+        "hint_level_3_fr": "Le résultat est 4 + 2i, donc Re(z) = 4 et Im(z) = 2.",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_plan_q1",
+        "concept_id": "concept_plan_complexe",
+        "lesson_id": "lesson_plan_complexe",
+        "type": "MCQ",
+        "difficulty": 1,
+        "question_fr": "Soit z = 3 + 4i. Quelles sont les coordonnées du point M d'affixe z ?",
+        "options": [
+          {
+            "key": "A",
+            "text_fr": "M(3 ; 4)"
+          },
+          {
+            "key": "B",
+            "text_fr": "M(4 ; 3)"
+          },
+          {
+            "key": "C",
+            "text_fr": "M(3 ; 4i)"
+          },
+          {
+            "key": "D",
+            "text_fr": "M(-3 ; -4)"
+          }
+        ],
+        "correct_answer": "A",
+        "feedback_correct_fr": "Parfait ! Re(z) = 3 est l'abscisse, Im(z) = 4 est l'ordonnée. Donc M(3 ; 4).",
+        "feedback_incorrect_fr": "Re(z) est l'abscisse (horizontal) et Im(z) est l'ordonnée (vertical). Ici, M(3 ; 4).",
+        "hint_level_1_fr": "Re(z) → abscisse, Im(z) → ordonnée.",
+        "hint_level_2_fr": "Le premier nombre de l'écriture x + iy devient la première coordonnée.",
+        "hint_level_3_fr": "Pour z = 3 + 4i, on a M(3 ; 4).",
+        "misconception_ref": "misconception_axes_inverses",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_plan_q2",
+        "concept_id": "concept_plan_complexe",
+        "lesson_id": "lesson_plan_complexe",
+        "type": "math_input",
+        "difficulty": 2,
+        "question_fr": "Soit z = -2 + 5i. Donne l'abscisse du point M d'affixe z.",
+        "expected_answer": "-2",
+        "accepted_answers": [
+          "-2"
+        ],
+        "feedback_correct_fr": "Très bien ! L'abscisse est Re(z) = -2.",
+        "feedback_incorrect_fr": "L'abscisse est la partie réelle, avec son signe. Ici, -2.",
+        "hint_level_1_fr": "L'abscisse est Re(z).",
+        "hint_level_2_fr": "Dans z = -2 + 5i, la partie réelle est -2.",
+        "hint_level_3_fr": "Donc l'abscisse de M est -2.",
+        "misconception_ref": "misconception_signe_re",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_plan_q3",
+        "concept_id": "concept_plan_complexe",
+        "lesson_id": "lesson_plan_complexe",
+        "type": "true_false",
+        "difficulty": 1,
+        "question_fr": "L'affixe d'un point est un nombre complexe.",
+        "expected_answer": true,
+        "feedback_correct_fr": "Exact ! L'affixe est le nombre complexe z ; les coordonnées du point sont (Re(z) ; Im(z)).",
+        "feedback_incorrect_fr": "L'affixe est bien un nombre complexe. Les coordonnées, elles, sont des réels.",
+        "hint_level_1_fr": "Affixe ↔ nombre complexe. Coordonnées ↔ couple de réels.",
+        "hint_level_2_fr": "L'affixe est z = x + iy, c'est un nombre complexe.",
+        "hint_level_3_fr": "Donc l'affixe est bien un nombre complexe.",
+        "misconception_ref": "misconception_affixe_vs_coordonnees",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_plan_q_interactive",
+        "concept_id": "concept_plan_complexe",
+        "lesson_id": "lesson_plan_complexe",
+        "type": "complex_plane",
+        "difficulty": 2,
+        "question_fr": "Déplace le point M pour qu'il représente le nombre complexe z = -2 + 5i.",
+        "expected_coordinates": {
+          "x": -2,
+          "y": 5
+        },
+        "tolerance": 0.2,
+        "visual_id": "visual_point_M_affixe",
+        "feedback_correct_fr": "Parfait ! M est bien placé en (-2 ; 5), ce qui correspond à z = -2 + 5i.",
+        "feedback_incorrect_fr": "L'abscisse est Re(z) = -2 (à gauche) et l'ordonnée est Im(z) = 5 (en haut).",
+        "hint_level_1_fr": "Re(z) → gauche/droite, Im(z) → haut/bas.",
+        "hint_level_2_fr": "Re(z) = -2 (négatif → à gauche), Im(z) = 5 (positif → en haut).",
+        "hint_level_3_fr": "Place M aux coordonnées (-2 ; 5).",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_plan_mastery",
+        "concept_id": "concept_plan_complexe",
+        "lesson_id": "lesson_plan_complexe",
+        "type": "MCQ",
+        "difficulty": 3,
+        "question_fr": "Le point M a pour coordonnées (-3 ; 7). Quel est son affixe z ?",
+        "options": [
+          {
+            "key": "A",
+            "text_fr": "z = -3 + 7i"
+          },
+          {
+            "key": "B",
+            "text_fr": "z = 7 - 3i"
+          },
+          {
+            "key": "C",
+            "text_fr": "z = -3 - 7i"
+          },
+          {
+            "key": "D",
+            "text_fr": "z = 7 + 3i"
+          }
+        ],
+        "correct_answer": "A",
+        "feedback_correct_fr": "Excellent ! L'affixe est z = x + iy = -3 + 7i.",
+        "feedback_incorrect_fr": "On lit les coordonnées dans l'ordre : abscisse → partie réelle, ordonnée → partie imaginaire. Donc z = -3 + 7i.",
+        "hint_level_1_fr": "Abscisse → Re(z), ordonnée → Im(z).",
+        "hint_level_2_fr": "M(-3 ; 7) signifie Re(z) = -3 et Im(z) = 7.",
+        "hint_level_3_fr": "Donc z = -3 + 7i.",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_conj_q1",
+        "concept_id": "concept_conjugue",
+        "lesson_id": "lesson_conjugue",
+        "type": "math_input",
+        "difficulty": 1,
+        "question_fr": "Soit z = 3 + 4i. Calcule z̄.",
+        "expected_answer": "3-4i",
+        "accepted_answers": [
+          "3-4i",
+          "3 - 4i",
+          "3+(-4)i"
+        ],
+        "feedback_correct_fr": "Bravo ! On change uniquement le signe de la partie imaginaire : z̄ = 3 - 4i.",
+        "feedback_incorrect_fr": "Le conjugué change le signe de la partie imaginaire uniquement. La partie réelle reste 3. Donc z̄ = 3 - 4i.",
+        "hint_level_1_fr": "On change uniquement le signe de la partie imaginaire.",
+        "hint_level_2_fr": "Dans z = 3 + 4i, on garde 3 et on change 4i en -4i.",
+        "hint_level_3_fr": "Donc z̄ = 3 - 4i.",
+        "misconception_ref": "misconception_conjugue_signe_re",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_conj_q2",
+        "concept_id": "concept_conjugue",
+        "lesson_id": "lesson_conjugue",
+        "type": "math_input",
+        "difficulty": 2,
+        "question_fr": "Soit z = -2 + 5i. Calcule z̄.",
+        "expected_answer": "-2-5i",
+        "accepted_answers": [
+          "-2-5i",
+          "-2 - 5i"
+        ],
+        "feedback_correct_fr": "Parfait ! On garde -2 et on change 5i en -5i : z̄ = -2 - 5i.",
+        "feedback_incorrect_fr": "La partie réelle reste -2 (ne change pas). Seule la partie imaginaire change de signe : 5i → -5i. Donc z̄ = -2 - 5i.",
+        "hint_level_1_fr": "Le conjugué ne change que le signe de Im(z).",
+        "hint_level_2_fr": "Garde -2, change +5i en -5i.",
+        "hint_level_3_fr": "Donc z̄ = -2 - 5i.",
+        "misconception_ref": "misconception_conjugue_signe_re",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_conj_q3",
+        "concept_id": "concept_conjugue",
+        "lesson_id": "lesson_conjugue",
+        "type": "true_false",
+        "difficulty": 2,
+        "question_fr": "Si z est un nombre réel, alors z̄ = z.",
+        "expected_answer": true,
+        "feedback_correct_fr": "Exact ! Un réel a Im(z) = 0, donc changer le signe ne change rien : z̄ = z.",
+        "feedback_incorrect_fr": "Un réel a Im(z) = 0. Changer le signe de 0 ne change rien. Donc z̄ = z.",
+        "hint_level_1_fr": "Un réel a partie imaginaire nulle.",
+        "hint_level_2_fr": "Si Im(z) = 0, alors z̄ = x - 0i = x = z.",
+        "hint_level_3_fr": "Donc z̄ = z pour tout réel.",
+        "misconception_ref": "misconception_conjugue_egal_z",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_conj_mastery",
+        "concept_id": "concept_conjugue",
+        "lesson_id": "lesson_conjugue",
+        "type": "complex_plane",
+        "difficulty": 3,
+        "question_fr": "Soit z = -2 + 5i représenté par M. Déplace le point M' pour qu'il représente z̄.",
+        "expected_coordinates": {
+          "x": -2,
+          "y": -5
+        },
+        "tolerance": 0.2,
+        "visual_id": "visual_conjugue_symetrie",
+        "feedback_correct_fr": "Bravo ! z̄ = -2 - 5i, donc M' est le symétrique de M par rapport à l'axe réel : M'(-2 ; -5).",
+        "feedback_incorrect_fr": "Le conjugué change uniquement le signe de la partie imaginaire. Donc z̄ = -2 - 5i et M'(-2 ; -5).",
+        "hint_level_1_fr": "z̄ est le symétrique de z par rapport à l'axe réel.",
+        "hint_level_2_fr": "Garde l'abscisse (-2), change l'ordonnée (5 → -5).",
+        "hint_level_3_fr": "Place M' aux coordonnées (-2 ; -5).",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_mod_q1",
+        "concept_id": "concept_module",
+        "lesson_id": "lesson_module",
+        "type": "math_input",
+        "difficulty": 2,
+        "question_fr": "Soit z = 3 + 4i. Calcule |z|.",
+        "expected_answer": "5",
+        "accepted_answers": [
+          "5"
+        ],
+        "feedback_correct_fr": "Parfait ! |z| = √(3² + 4²) = √25 = 5.",
+        "feedback_incorrect_fr": "On applique |z| = √(x² + y²) = √(9 + 16) = √25 = 5.",
+        "hint_level_1_fr": "Utilise |z| = √(x² + y²).",
+        "hint_level_2_fr": "x² + y² = 9 + 16 = 25.",
+        "hint_level_3_fr": "Donc |z| = √25 = 5.",
+        "misconception_ref": "misconception_module_sans_racine",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_mod_q2",
+        "concept_id": "concept_module",
+        "lesson_id": "lesson_module",
+        "type": "math_input",
+        "difficulty": 3,
+        "question_fr": "Soit z = -2 + 5i. Calcule |z| sous la forme √n (par exemple : √29).",
+        "expected_answer": "√29",
+        "accepted_answers": [
+          "√29",
+          "sqrt(29)",
+          "√(29)"
+        ],
+        "feedback_correct_fr": "Excellent ! |z| = √((-2)² + 5²) = √(4 + 25) = √29.",
+        "feedback_incorrect_fr": "On calcule x² + y² = (-2)² + 5² = 4 + 25 = 29, puis |z| = √29.",
+        "hint_level_1_fr": "Le signe disparaît au carré.",
+        "hint_level_2_fr": "(-2)² = 4 et 5² = 25, somme 29.",
+        "hint_level_3_fr": "Donc |z| = √29.",
+        "misconception_ref": "misconception_module_sans_racine",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_mod_q3",
+        "concept_id": "concept_module",
+        "lesson_id": "lesson_module",
+        "type": "true_false",
+        "difficulty": 1,
+        "question_fr": "Le module d'un nombre complexe peut être négatif.",
+        "expected_answer": false,
+        "feedback_correct_fr": "Exact ! Le module est une distance, donc il est toujours positif ou nul.",
+        "feedback_incorrect_fr": "Un module est une distance : il est toujours positif ou nul. Il ne peut pas être négatif.",
+        "hint_level_1_fr": "Le module est une distance.",
+        "hint_level_2_fr": "Une distance est positive ou nulle.",
+        "hint_level_3_fr": "Donc |z| ≥ 0 toujours.",
+        "misconception_ref": "misconception_module_negatif",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_mod_mastery",
+        "concept_id": "concept_module",
+        "lesson_id": "lesson_module",
+        "type": "MCQ",
+        "difficulty": 3,
+        "question_fr": "Soit z = 1 - i. Que vaut |z| ?",
+        "options": [
+          {
+            "key": "A",
+            "text_fr": "1"
+          },
+          {
+            "key": "B",
+            "text_fr": "√2"
+          },
+          {
+            "key": "C",
+            "text_fr": "2"
+          },
+          {
+            "key": "D",
+            "text_fr": "0"
+          }
+        ],
+        "correct_answer": "B",
+        "feedback_correct_fr": "Bravo ! |z| = √(1² + (-1)²) = √(1 + 1) = √2.",
+        "feedback_incorrect_fr": "On calcule x² + y² = 1 + 1 = 2, donc |z| = √2.",
+        "hint_level_1_fr": "Applique |z| = √(x² + y²).",
+        "hint_level_2_fr": "x = 1, y = -1. Donc x² + y² = 1 + 1 = 2.",
+        "hint_level_3_fr": "Donc |z| = √2.",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_arg_q1",
+        "concept_id": "concept_argument",
+        "lesson_id": "lesson_argument",
+        "type": "MCQ",
+        "difficulty": 2,
+        "question_fr": "Soit z = 1 + i. Quel est un argument de z ?",
+        "options": [
+          {
+            "key": "A",
+            "text_fr": "π/4"
+          },
+          {
+            "key": "B",
+            "text_fr": "π/2"
+          },
+          {
+            "key": "C",
+            "text_fr": "π"
+          },
+          {
+            "key": "D",
+            "text_fr": "0"
+          }
+        ],
+        "correct_answer": "A",
+        "feedback_correct_fr": "Parfait ! M(1 ; 1) est dans le quadrant I, l'angle vaut π/4.",
+        "feedback_incorrect_fr": "M(1 ; 1) forme un triangle isocèle rectangle avec les axes, l'angle vaut π/4.",
+        "hint_level_1_fr": "Place M dans le quadrant I.",
+        "hint_level_2_fr": "Le triangle OMA est isocèle rectangle (côtés 1 et 1).",
+        "hint_level_3_fr": "Donc l'angle vaut π/4.",
+        "misconception_ref": "misconception_argument_quadrant",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_arg_q2",
+        "concept_id": "concept_argument",
+        "lesson_id": "lesson_argument",
+        "type": "MCQ",
+        "difficulty": 3,
+        "question_fr": "Soit z = -1 + i. Quel est un argument de z ?",
+        "options": [
+          {
+            "key": "A",
+            "text_fr": "-π/4"
+          },
+          {
+            "key": "B",
+            "text_fr": "π/4"
+          },
+          {
+            "key": "C",
+            "text_fr": "3π/4"
+          },
+          {
+            "key": "D",
+            "text_fr": "5π/4"
+          }
+        ],
+        "correct_answer": "C",
+        "feedback_correct_fr": "Excellent ! M est dans le quadrant II, donc arg(z) = 3π/4.",
+        "feedback_incorrect_fr": "tan(θ) = -1 donne arctan(-1) = -π/4, mais M est dans le quadrant II, donc on ajoute π : θ = 3π/4.",
+        "hint_level_1_fr": "Dans quel quadrant se trouve M(-1 ; 1) ?",
+        "hint_level_2_fr": "M est dans le quadrant II, l'angle est entre π/2 et π.",
+        "hint_level_3_fr": "tan(θ) = -1 et quadrant II → θ = 3π/4.",
+        "misconception_ref": "misconception_argument_quadrant",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_arg_q3",
+        "concept_id": "concept_argument",
+        "lesson_id": "lesson_argument",
+        "type": "true_false",
+        "difficulty": 2,
+        "question_fr": "arg(0) = 0.",
+        "expected_answer": false,
+        "feedback_correct_fr": "Exact ! arg(0) n'est pas défini car il n'y a pas d'angle pour le point O.",
+        "feedback_incorrect_fr": "arg(0) n'existe pas. L'argument n'est défini que pour z ≠ 0.",
+        "hint_level_1_fr": "L'argument est un angle avec la demi-droite [OM).",
+        "hint_level_2_fr": "Si z = 0, M = O, il n'y a pas de demi-droite définie.",
+        "hint_level_3_fr": "Donc arg(0) n'existe pas.",
+        "misconception_ref": "misconception_argument_zero",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_arg_mastery",
+        "concept_id": "concept_argument",
+        "lesson_id": "lesson_argument",
+        "type": "MCQ",
+        "difficulty": 4,
+        "question_fr": "Soit z = -1 - i. Quel est un argument de z ?",
+        "options": [
+          {
+            "key": "A",
+            "text_fr": "π/4"
+          },
+          {
+            "key": "B",
+            "text_fr": "3π/4"
+          },
+          {
+            "key": "C",
+            "text_fr": "-3π/4"
+          },
+          {
+            "key": "D",
+            "text_fr": "-π/4"
+          }
+        ],
+        "correct_answer": "C",
+        "feedback_correct_fr": "Bravo ! M(-1 ; -1) est dans le quadrant III, donc arg(z) = -3π/4 (ou 5π/4).",
+        "feedback_incorrect_fr": "M est dans le quadrant III (x < 0, y < 0). tan(θ) = 1, arctan(1) = π/4, on retranche π : θ = -3π/4.",
+        "hint_level_1_fr": "Dans quel quadrant se trouve M(-1 ; -1) ?",
+        "hint_level_2_fr": "Quadrant III, l'angle est entre -π et -π/2 (ou entre π et 3π/2).",
+        "hint_level_3_fr": "tan(θ) = (-1)/(-1) = 1, quadrant III → θ = -3π/4.",
+        "misconception_ref": "misconception_argument_quadrant",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_trigo_q1",
+        "concept_id": "concept_forme_trigonometrique",
+        "lesson_id": "lesson_forme_trigonometrique",
+        "type": "math_input",
+        "difficulty": 2,
+        "question_fr": "Mets z = 1 + i sous forme trigonométrique. Donne le module r (par exemple : √2).",
+        "expected_answer": "√2",
+        "accepted_answers": [
+          "√2",
+          "sqrt(2)"
+        ],
+        "feedback_correct_fr": "Parfait ! r = √(1² + 1²) = √2.",
+        "feedback_incorrect_fr": "Le module est r = √(x² + y²) = √(1 + 1) = √2.",
+        "hint_level_1_fr": "Calcule |z| = √(x² + y²).",
+        "hint_level_2_fr": "x = 1 et y = 1, donc x² + y² = 2.",
+        "hint_level_3_fr": "r = √2.",
+        "misconception_ref": "misconception_module_negatif_trigo",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_trigo_q2",
+        "concept_id": "concept_forme_trigonometrique",
+        "lesson_id": "lesson_forme_trigonometrique",
+        "type": "MCQ",
+        "difficulty": 3,
+        "question_fr": "Quelle est la forme trigonométrique correcte de z = -1 + i ?",
+        "options": [
+          {
+            "key": "A",
+            "text_fr": "√2 (cos(3π/4) + i sin(3π/4))"
+          },
+          {
+            "key": "B",
+            "text_fr": "-√2 (cos(π/4) + i sin(π/4))"
+          },
+          {
+            "key": "C",
+            "text_fr": "√2 (cos(π/4) - i sin(π/4))"
+          },
+          {
+            "key": "D",
+            "text_fr": "√2 (cos(π/4) + i sin(π/4))"
+          }
+        ],
+        "correct_answer": "A",
+        "feedback_correct_fr": "Excellent ! r = √2 > 0 et θ = 3π/4 (quadrant II), donc la bonne écriture est A.",
+        "feedback_incorrect_fr": "Le module doit être positif (√2, pas -√2). L'argument dans le quadrant II est 3π/4. La forme standard utilise toujours +i sin θ.",
+        "hint_level_1_fr": "Le module doit être > 0.",
+        "hint_level_2_fr": "Le quadrant II donne θ = 3π/4, et la forme utilise +i sin θ.",
+        "hint_level_3_fr": "Donc z = √2 (cos(3π/4) + i sin(3π/4)).",
+        "misconception_ref": "misconception_module_negatif_trigo",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_trigo_q3",
+        "concept_id": "concept_forme_trigonometrique",
+        "lesson_id": "lesson_forme_trigonometrique",
+        "type": "true_false",
+        "difficulty": 2,
+        "question_fr": "La forme trigonométrique s'écrit z = r(cos θ - i sin θ).",
+        "expected_answer": false,
+        "feedback_correct_fr": "Exact ! La forme standard utilise +i sin θ, pas -i sin θ.",
+        "feedback_incorrect_fr": "La forme trigonométrique standard est z = r(cos θ + i sin θ). Le signe moins est faux.",
+        "hint_level_1_fr": "La forme standard utilise un signe + devant i sin θ.",
+        "hint_level_2_fr": "z = r(cos θ + i sin θ), jamais avec un signe -.",
+        "hint_level_3_fr": "Donc l'affirmation est fausse.",
+        "misconception_ref": "misconception_signe_sin",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_trigo_mastery",
+        "concept_id": "concept_forme_trigonometrique",
+        "lesson_id": "lesson_forme_trigonometrique",
+        "type": "matching",
+        "difficulty": 3,
+        "question_fr": "Associe chaque nombre complexe à sa forme trigonométrique.",
+        "pairs": [
+          {
+            "left": "z = 1 + i",
+            "right": "√2 (cos(π/4) + i sin(π/4))"
+          },
+          {
+            "left": "z = -1 + i",
+            "right": "√2 (cos(3π/4) + i sin(3π/4))"
+          },
+          {
+            "left": "z = -1 - i",
+            "right": "√2 (cos(-3π/4) + i sin(-3π/4))"
+          },
+          {
+            "left": "z = 1 - i",
+            "right": "√2 (cos(-π/4) + i sin(-π/4))"
+          }
+        ],
+        "feedback_correct_fr": "Bravo ! Tu as correctement associé chaque nombre à sa forme trigonométrique.",
+        "feedback_incorrect_fr": "Vérifie les quadrants : z = 1 + i → π/4 (I), z = -1 + i → 3π/4 (II), z = -1 - i → -3π/4 (III), z = 1 - i → -π/4 (IV).",
+        "hint_level_1_fr": "Détermine d'abord le quadrant de chaque point.",
+        "hint_level_2_fr": "Quadrant I → π/4, II → 3π/4, III → -3π/4, IV → -π/4.",
+        "hint_level_3_fr": "Associe 1+i → π/4, -1+i → 3π/4, -1-i → -3π/4, 1-i → -π/4.",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_exp_q1",
+        "concept_id": "concept_forme_exponentielle",
+        "lesson_id": "lesson_forme_exponentielle",
+        "type": "math_input",
+        "difficulty": 2,
+        "question_fr": "Mets z = 1 + i sous forme exponentielle. Donne l'expression complète (par exemple : sqrt(2)*e^(i*pi/4)).",
+        "expected_answer": "sqrt(2)*e^(i*pi/4)",
+        "accepted_answers": [
+          "sqrt(2)*e^(i*pi/4)",
+          "√2·e^(iπ/4)",
+          "√2 e^(iπ/4)",
+          "sqrt(2)e^(i*pi/4)"
+        ],
+        "feedback_correct_fr": "Parfait ! r = √2 et θ = π/4, donc z = √2 · e^(iπ/4).",
+        "feedback_incorrect_fr": "On calcule r = √2 et θ = π/4, puis on écrit z = √2 · e^(iπ/4).",
+        "hint_level_1_fr": "Calcule d'abord le module et l'argument.",
+        "hint_level_2_fr": "r = √2 et θ = π/4.",
+        "hint_level_3_fr": "Donc z = √2 · e^(iπ/4).",
+        "misconception_ref": "misconception_exponentielle_sans_i",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_exp_q2",
+        "concept_id": "concept_forme_exponentielle",
+        "lesson_id": "lesson_forme_exponentielle",
+        "type": "MCQ",
+        "difficulty": 3,
+        "question_fr": "Quelle est la forme exponentielle correcte de z = -1 + i ?",
+        "options": [
+          {
+            "key": "A",
+            "text_fr": "√2 · e^(iπ/4)"
+          },
+          {
+            "key": "B",
+            "text_fr": "√2 · e^(i·3π/4)"
+          },
+          {
+            "key": "C",
+            "text_fr": "√2 · e^(-iπ/4)"
+          },
+          {
+            "key": "D",
+            "text_fr": "-√2 · e^(iπ/4)"
+          }
+        ],
+        "correct_answer": "B",
+        "feedback_correct_fr": "Excellent ! r = √2 et θ = 3π/4, donc z = √2 · e^(i·3π/4).",
+        "feedback_incorrect_fr": "Le module doit être positif (√2) et l'argument du quadrant II est 3π/4. La bonne écriture est √2 · e^(i·3π/4).",
+        "hint_level_1_fr": "Le module doit être > 0.",
+        "hint_level_2_fr": "Le quadrant II donne θ = 3π/4.",
+        "hint_level_3_fr": "Donc z = √2 · e^(i·3π/4).",
+        "misconception_ref": "misconception_exponentielle_sans_i",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_exp_q3",
+        "concept_id": "concept_forme_exponentielle",
+        "lesson_id": "lesson_forme_exponentielle",
+        "type": "true_false",
+        "difficulty": 2,
+        "question_fr": "e^(iπ) = -1.",
+        "expected_answer": true,
+        "feedback_correct_fr": "Exact ! e^(iπ) = cos(π) + i sin(π) = -1 + 0 = -1.",
+        "feedback_incorrect_fr": "D'après la définition, e^(iπ) = cos(π) + i sin(π) = -1 + 0i = -1.",
+        "hint_level_1_fr": "Utilise e^(iθ) = cos θ + i sin θ.",
+        "hint_level_2_fr": "cos(π) = -1 et sin(π) = 0.",
+        "hint_level_3_fr": "Donc e^(iπ) = -1.",
+        "misconception_ref": "misconception_e_i_pi",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      },
+      {
+        "exercise_id": "ex_exp_mastery",
+        "concept_id": "concept_forme_exponentielle",
+        "lesson_id": "lesson_forme_exponentielle",
+        "type": "matching",
+        "difficulty": 4,
+        "question_fr": "Associe chaque forme trigonométrique à sa forme exponentielle.",
+        "pairs": [
+          {
+            "left": "√2 (cos(π/4) + i sin(π/4))",
+            "right": "√2 · e^(iπ/4)"
+          },
+          {
+            "left": "√2 (cos(3π/4) + i sin(3π/4))",
+            "right": "√2 · e^(i·3π/4)"
+          },
+          {
+            "left": "2 (cos(0) + i sin(0))",
+            "right": "2 · e^(i·0) = 2"
+          },
+          {
+            "left": "1 (cos(π) + i sin(π))",
+            "right": "1 · e^(iπ) = -1"
+          }
+        ],
+        "feedback_correct_fr": "Bravo ! Tu maîtrises le passage trigonométrique → exponentielle.",
+        "feedback_incorrect_fr": "On remplace (cos θ + i sin θ) par e^(iθ) en gardant le module r. Cas particuliers : 2·e^(i·0) = 2 et 1·e^(iπ) = -1.",
+        "hint_level_1_fr": "Remplace (cos θ + i sin θ) par e^(iθ).",
+        "hint_level_2_fr": "Le module r reste devant, multiplié par l'exponentielle.",
+        "hint_level_3_fr": "√2 → π/4 ; √2 → 3π/4 ; 2 → 0 (donc 2) ; 1 → π (donc -1).",
+        "math_validation": {
+          "status": "validated",
+          "checked_by": "GLM"
+        }
+      }
+    ]
+  },
+  "pedagogy": {
+    "learning_model": "mastery_based",
+    "principles": [
+      "Comprendre → Reconnaître → Appliquer → Expliquer → Résoudre",
+      "Micro-learning : chaque étape dure entre 60 et 90 secondes",
+      "Feedback pédagogique qui explique l'erreur, jamais seulement 'Incorrect'",
+      "Trois niveaux d'indices progressifs avant de donner la solution",
+      "Détection des misconceptions et remédiation ciblée",
+      "Aucun passage à la notion suivante tant que la notion clé n'est pas maîtrisée"
+    ],
+    "difficulty_model": {
+      "levels": {
+        "1": {
+          "label_fr": "facile",
+          "description_fr": "Reconnaissance directe, application immédiate d'une définition."
+        },
+        "2": {
+          "label_fr": "moyen",
+          "description_fr": "Application directe avec un calcul simple ou un signe à gérer."
+        },
+        "3": {
+          "label_fr": "difficile",
+          "description_fr": "Application avec plusieurs étapes ou gestion du quadrant."
+        },
+        "4": {
+          "label_fr": "avancé",
+          "description_fr": "Raisonnement, synthèse, passage entre plusieurs formes."
+        }
+      },
+      "progression_rule_fr": "On commence toujours par la reconnaissance (niveau 1) avant l'application à plusieurs étapes (niveaux 3-4).",
+      "adaptation": {
+        "beginner": "Explications plus courtes, exemples simples, exercices niveau 1-2 en priorité.",
+        "intermediate": "Exercices directs et exercices à plusieurs étapes (niveaux 2-3).",
+        "advanced": "Problèmes de synthèse et raisonnement (niveaux 3-4)."
+      }
+    },
+    "mastery_model": {
+      "default_threshold": 0.8,
+      "minimum_attempts_default": 3,
+      "review_if_failed": true,
+      "concept_thresholds": {
+        "concept_forme_algebrique": {
+          "threshold": 0.8,
+          "minimum_attempts": 3
+        },
+        "concept_re_im": {
+          "threshold": 0.8,
+          "minimum_attempts": 3
+        },
+        "concept_plan_complexe": {
+          "threshold": 0.8,
+          "minimum_attempts": 3
+        },
+        "concept_conjugue": {
+          "threshold": 0.8,
+          "minimum_attempts": 3
+        },
+        "concept_module": {
+          "threshold": 0.8,
+          "minimum_attempts": 3
+        },
+        "concept_argument": {
+          "threshold": 0.8,
+          "minimum_attempts": 4
+        },
+        "concept_forme_trigonometrique": {
+          "threshold": 0.8,
+          "minimum_attempts": 3
+        },
+        "concept_forme_exponentielle": {
+          "threshold": 0.8,
+          "minimum_attempts": 3
+        }
+      },
+      "remediation_protocol_fr": [
+        "Identifier la notion faible précise (misconception ou concept).",
+        "Donner une explication courte et ciblée.",
+        "Donner un exemple simple.",
+        "Donner un exercice facile pour rétablir la confiance.",
+        "Reproposer un exercice de niveau équivalent.",
+        "Ne pas avancer tant que la notion indispensable n'est pas maîtrisée."
+      ]
+    },
+    "hint_system": {
+      "levels": [
+        {
+          "level": 1,
+          "role_fr": "Petit indice : rappeler la règle générale."
+        },
+        {
+          "level": 2,
+          "role_fr": "Aide plus précise : orienter le raisonnement."
+        },
+        {
+          "level": 3,
+          "role_fr": "Aide presque complète : montrer la méthode sans donner la réponse."
+        }
+      ],
+      "max_hints_per_exercise": 3,
+      "delivery_rule_fr": "On ne donne jamais la réponse immédiatement. On descend niveau par niveau."
+    },
+    "feedback_policy": {
+      "forbidden_phrases": [
+        "Incorrect.",
+        "Tu es nul.",
+        "C'est très facile.",
+        "Tu devrais déjà savoir ça."
+      ],
+      "required_style": [
+        "Encourageant, calme, simple, professionnel, jamais infantilisant.",
+        "Toujours expliquer l'erreur, pas seulement la signaler.",
+        "Lier le feedback à la misconception détectée quand c'est possible."
+      ],
+      "examples": {
+        "correct": "Très bien ! Dans z = x + iy, la partie réelle est x. Ici, x = -2.",
+        "incorrect": "Attention : la partie réelle est le nombre qui ne contient pas i. Ici, elle vaut -2 (avec le signe)."
+      }
+    },
+    "accessibility": {
+      "every_visual_must_have_alt_text": true,
+      "language": "fr",
+      "reading_level": "élève du secondaire",
+      "math_notation": "LaTeX pour toutes les formules importantes"
+    }
+  },
+  "qa": {
+    "math_validation": {
+      "policy_fr": "Pour chaque exercice : vérifier la réponse correcte, les calculs, les signes, les puissances de i, les solutions, les étapes et la cohérence question/réponse. En cas de doute, marquer needs_review et ne jamais corriger silencieusement la source.",
+      "checks_performed": [
+        "Cohérence des formes algébriques, trigonométriques et exponentielles.",
+        "Calcul des modules (Pythagore) vérifié pour les exemples 3+4i et -2+5i.",
+        "Arguments vérifiés quadrant par quadrant pour 1+i, -1+i, -1-i, 1-i.",
+        "Conjugués vérifiés : seul le signe de la partie imaginaire change.",
+        "Identité e^(iπ) = -1 vérifiée via cos(π) + i sin(π)."
+      ],
+      "exercises_validated": 33,
+      "exercises_needs_review": 0,
+      "overall_status": "validated_for_demo"
+    },
+    "content_validation": {
+      "source_respected": true,
+      "note_fr": "Le contenu suit fidèlement les exemples du prompt professionnel Mouine. Les définitions mathématiques officielles sont conservées (forme algébrique, partie réelle, partie imaginaire, conjugué, module, argument, affixe, plan complexe, forme trigonométrique, forme exponentielle).",
+      "terminology_preserved": [
+        "Nombre complexe",
+        "Forme algébrique",
+        "Partie réelle",
+        "Partie imaginaire",
+        "Réel",
+        "Imaginaire pur",
+        "Conjugué",
+        "Module",
+        "Argument",
+        "Affixe",
+        "Plan complexe",
+        "Forme trigonométrique",
+        "Forme exponentielle"
+      ]
+    },
+    "missing_information": [
+      {
+        "field": "source_pages",
+        "concerned": "chapter.internal.source_pages et tous les concepts.internal.source_pages",
+        "reason_fr": "Le fichier source JSON (clean_french_moeen_curriculum_enriched.json) n'a pas été reçu sur le serveur. Les numéros de pages du manuel mauritanien ne peuvent pas être renseignés.",
+        "information_missing": true
+      },
+      {
+        "field": "equation_second_degre_complet",
+        "concerned": "chapitre Nombres Complexes — équation du second degré dans C",
+        "reason_fr": "Le prompt mentionne l'équation du second degré et le discriminant dans la terminologie à conserver, mais aucun exemple chiffré n'est fourni dans le contenu d'exemple. Une leçon dédiée sera ajoutée dès réception du fichier source.",
+        "information_missing": true
+      }
+    ],
+    "needs_review": [
+      {
+        "item_id": "review_source_pages",
+        "severity": "high",
+        "description_fr": "Dès que le fichier source sera fourni, remplir tous les champs source_pages, source_id, provenance et validation_status avec les vraies valeurs du manuel mauritanien.",
+        "status": "blocked_on_source"
+      },
+      {
+        "item_id": "review_second_degre_chapter",
+        "severity": "medium",
+        "description_fr": "Ajouter un concept et une leçon sur la résolution des équations du second degré dans C (discriminant négatif, racines conjuguées) dès que le contenu source le permettra.",
+        "status": "blocked_on_source"
+      },
+      {
+        "item_id": "review_svg_rendering",
+        "severity": "low",
+        "description_fr": "Les visuels sont décrits de façon déterministe (svg_source_ref) mais le rendu SVG réel doit être généré côté plateforme à partir de ces spécifications. Vérifier le rendu sur un écran d'élève.",
+        "status": "pending_platform_implementation"
+      }
+    ],
+    "separation_internal_student": {
+      "internal_fields": [
+        "source_pages",
+        "source_id",
+        "provenance",
+        "validation_status",
+        "review_status",
+        "generation_metadata"
+      ],
+      "student_fields": [
+        "lesson",
+        "explanation",
+        "example",
+        "exercise",
+        "hint",
+        "feedback",
+        "visual",
+        "mastery"
+      ],
+      "rule_fr": "Les champs internes ne doivent jamais être affichés à l'élève. Ils servent à la traçabilité, à la validation et à la révision humaine."
+    }
+  }
+}
